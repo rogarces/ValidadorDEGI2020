@@ -150,7 +150,6 @@
     <Compile Include="Splash\Presentacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TablaValidacion.vb" />
     <Compile Include="Validador2018.Designer.vb">
       <DependentUpon>Validador2018.vb</DependentUpon>
     </Compile>
@@ -186,7 +185,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="attachment.ico" />
     <Content Include="books.ico" />
     <None Include="Scripts\excel.png" />
     <None Include="Resources\ExcelNuevo.png" />
