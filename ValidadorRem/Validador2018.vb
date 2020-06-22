@@ -45,8 +45,6 @@ Public Class Validador2019
                     Select Case Mid(NombreArchivo, 7, 1)
                         Case Is = "A"
                             CargaSerieA()
-                            MsgBox("El archivo Fue Validado Con Exito", MsgBoxStyle.Information, "Advertencia de Serie REM")
-
                         Case Is = "P"
                             CargaSerieP()
                         Case Is = "D"
@@ -2673,7 +2671,7 @@ Public Class Validador2019
         End Select
         '2************************************************************************************************************************************************************************************
         Select Case CodigoEstablec
-            Case 123300, 123301, 123302, 123303, 123701 ' JAUREGUI, M.LOPETEGUI, OVEJERIA, RAHUE ALTO, CECOF MANUEL RODRIGUEZ
+            Case 123100, 123300, 123301, 123302, 123303, 123701 ' JAUREGUI, M.LOPETEGUI, OVEJERIA, RAHUE ALTO, CECOF MANUEL RODRIGUEZ
             Case Else 'RESTO DE ESTABLECIMIENTOS
                 Select Case B(11)
                     Case Is <> 0
@@ -2683,7 +2681,7 @@ Public Class Validador2019
                 End Select
         End Select
         Select Case CodigoEstablec
-            Case 123300, 123301, 123302, 123303, 123701 ' JAUREGUI, M.LOPETEGUI, OVEJERIA, RAHUE ALTO, CECOF MANUEL RODRIGUEZ
+            Case 123100, 123300, 123301, 123302, 123303, 123701 ' JAUREGUI, M.LOPETEGUI, OVEJERIA, RAHUE ALTO, CECOF MANUEL RODRIGUEZ
             Case Else 'RESTO DE ESTABLECIMIENTOS
                 Select Case B(65)
                     Case Is <> 0
@@ -2705,7 +2703,7 @@ Public Class Validador2019
         End Select
         '4************************************************************************************************************************************************************************************
         Select Case CodigoEstablec
-            Case 123301, 123309, 123304
+            Case 123301, 123309, 123304, 123100
             Case Else 'RESTO DE ESTABLECIMIENTOS
                 Select Case B(51)
                     Case Is <> 0
