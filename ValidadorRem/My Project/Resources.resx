@@ -121,21 +121,6 @@
   <data name="degi2019" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\degi2019.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo-Servicio-de-Salud-Osorno" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo-Servicio-de-Salud-Osorno1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGO DEGI 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO DEGI 2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO DEGI.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FONDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FONDO.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ValidadorRem", "ValidadorRem\ValidadorRem.vbproj", "{058AD0A0-A768-42F5-9463-A4CE22CF4A19}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Validador2020", "Validador2020\Validador2020.vdproj", "{5278994F-F1A7-41F6-90CC-86A48C401F3B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -17,8 +15,6 @@ Global
 		{058AD0A0-A768-42F5-9463-A4CE22CF4A19}.Debug|x86.Build.0 = Debug|x86
 		{058AD0A0-A768-42F5-9463-A4CE22CF4A19}.Release|x86.ActiveCfg = Release|x86
 		{058AD0A0-A768-42F5-9463-A4CE22CF4A19}.Release|x86.Build.0 = Release|x86
-		{5278994F-F1A7-41F6-90CC-86A48C401F3B}.Debug|x86.ActiveCfg = Debug
-		{5278994F-F1A7-41F6-90CC-86A48C401F3B}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

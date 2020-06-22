@@ -186,25 +186,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="books.ico" />
-    <None Include="Scripts\excel.png" />
-    <None Include="Resources\ExcelNuevo.png" />
     <None Include="Resources\Logo-Servicio-de-Salud-Osorno.jpg" />
-    <None Include="Resources\AbrirArchivo.png" />
-    <None Include="Resources\Exportar.png" />
-    <None Include="Resources\exam.png" />
-    <None Include="Resources\file.png" />
-    <None Include="Resources\excel.png" />
     <None Include="Resources\degi2019.png" />
     <None Include="Resources\LOGO DEGI 2.jpg" />
     <Content Include="favicon.ico" />
-    <None Include="Resources\Logo-Servicio-de-Salud-Osorno1.jpg" />
     <None Include="Resources\FONDO.JPG" />
     <None Include="Resources\LOGO DEGI.jpg" />
-    <None Include="Resources\Foot_estadi.png" />
     <None Include="Resources\sbperm-excel.png" />
-    <None Include="Resources\computer.png" />
-    <None Include="Resources\calendar_empty1.png" />
-    <None Include="Resources\calendar_empty.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -243,7 +231,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formularios Antiguos\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
