@@ -64,6 +64,7 @@ Partial Class Validador2019
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.lblversionPublicacion = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -509,7 +510,7 @@ Partial Class Validador2019
         Me.lblversionPublicacion.AutoSize = True
         Me.lblversionPublicacion.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblversionPublicacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.lblversionPublicacion.Location = New System.Drawing.Point(768, 240)
+        Me.lblversionPublicacion.Location = New System.Drawing.Point(776, 240)
         Me.lblversionPublicacion.Name = "lblversionPublicacion"
         Me.lblversionPublicacion.Size = New System.Drawing.Size(13, 14)
         Me.lblversionPublicacion.TabIndex = 31
@@ -525,12 +526,24 @@ Partial Class Validador2019
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(90, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(974, 257)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(123, 14)
+        Me.Label1.TabIndex = 32
+        Me.Label1.Text = "Ver 1.2 Act. Junio 2020"
+        '
         'Validador2019
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1138, 525)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblversionPublicacion)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox4)
@@ -546,7 +559,7 @@ Partial Class Validador2019
         Me.MaximizeBox = False
         Me.Name = "Validador2019"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Validador 2019 Serie A 1.3 (Actualizado)"
+        Me.Text = "Validador 2020 Serie A 1.2 (Actualizado)"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -600,4 +613,5 @@ Partial Class Validador2019
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Public WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Label1 As Label
 End Class

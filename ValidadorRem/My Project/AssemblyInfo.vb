@@ -10,11 +10,11 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("ValidadorRem")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ValidadorRem")> 
-<Assembly: AssemblyCopyright("Copyright ©  2019")> 
+<Assembly: AssemblyTitle("Validador Rem")>
+<Assembly: AssemblyDescription("VALIDADOR 2020")>
+<Assembly: AssemblyCompany("DEGI")>
+<Assembly: AssemblyProduct("ValidadorRem")>
+<Assembly: AssemblyCopyright("Copyright ©  2020")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(True)> 

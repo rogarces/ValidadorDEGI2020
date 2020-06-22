@@ -45,6 +45,8 @@ Public Class Validador2019
                     Select Case Mid(NombreArchivo, 7, 1)
                         Case Is = "A"
                             CargaSerieA()
+                            MsgBox("El archivo Fue Validado Con Exito", MsgBoxStyle.Information, "Advertencia de Serie REM")
+
                         Case Is = "P"
                             CargaSerieP()
                         Case Is = "D"
@@ -319,7 +321,6 @@ Public Class Validador2019
         A01(7) = (L(31) + L(32)) ' VA AL REM03
         A01(8) = (T(31) + U(31) + T(32) + U(32) + T(33) + U(33)) ' VA AL REM03
 
-        MsgBox("REM01")
 
         xlHoja = Nothing
     End Sub 'OK
@@ -466,7 +467,6 @@ Public Class Validador2019
         '4y5************************************************************************************************************************************************************************************
         A02(1) = B(11)
 
-        MsgBox("REM02")
         xlHoja = Nothing
     End Sub 'OK
     Sub REM03()
@@ -903,9 +903,6 @@ Public Class Validador2019
         '18************************************************************************************************************************************************************************************
         A03(6) = (C(102) + C(103) + C(104)) ' VA AL REM 27
 
-
-        MsgBox("REM03")
-
         xlHoja = Nothing
     End Sub 'OK
     Sub REM04()
@@ -1292,10 +1289,39 @@ Public Class Validador2019
                 End With
         End Select
 
+        'Validacion Recetas
+        Select Case C(98)
+            Case Is >= B(98)
+                With Me.DataGridView1.Rows
+                    .Add("A04", "[J]", "RECETA[01]", "ERROR", "Despacho Recetas Pacientes Ambulatorios - Crónica, Recetas Despachada parcial (Celda C98), Debe ser menor a recetas despachadas total (Celda B98)", "[" & C(98) & "-" & B(98) & "]")
+                End With
+        End Select
+
+        Select Case D(98)
+            Case Is <= B(98)
+                With Me.DataGridView1.Rows
+                    .Add("A04", "[J]", "RECETA[02]", "ERROR", "Despacho Recetas Pacientes Ambulatorios - Crónica, Prescripciones emitidas (Celda D98) debe ser mayor a recetas despachadas total (Celda B98)", "[" & D(98) & "-" & B(98) & "]")
+                End With
+        End Select
+
+        Select Case E(98)
+            Case Is >= D(98)
+                With Me.DataGridView1.Rows
+                    .Add("A04", "[J]", "RECETA[03]", "ERROR", "Despacho Recetas Pacientes Ambulatorios - Crónica, Prescripciones Rechazadas (Celda E98) debe ser menor a prescripciones emitidas (Celda D98)", "[" & E(98) & "-" & D(98) & "]")
+                End With
+        End Select
+
+        Select Case F(98)
+            Case Is <> (B(98) - C(98))
+                With Me.DataGridView1.Rows
+                    .Add("A04", "[J]", "RECETA[04]", "ERROR", "Despacho Recetas Pacientes Ambulatorios - Crónica, Recetas Despachadas con Oportunidad (Celda F98), debe ser igual a recetas con despacho total menos despacho Parcial (Celdas B98-C98)", "[" & F(98) & "-" & (B(98) - C(98)) & "]")
+                End With
+        End Select
+
+
+
         A04(1) = B(24)
 
-
-        MsgBox("REM04 OK")
         xlHoja = Nothing
     End Sub 'OK
     Sub REM05()
@@ -1348,12 +1374,12 @@ Public Class Validador2019
         '    B(ii) = xlHoja.Range("B" & ii & "").Value
         'Next
 
-        ' SECCIÓN E:  INGRESOS  A CONTROL DE SALUD DE RECIÉN NACIDOS
-        'For ii = 55 To 58
-        '    C(ii) = xlHoja.Range("C" & ii & "").Value
-        '    D(ii) = xlHoja.Range("D" & ii & "").Value
-        '    E(ii) = xlHoja.Range("E" & ii & "").Value
-        'Next
+        'SECCIÓN E: INGRESOS  A CONTROL DE SALUD DE RECIÉN NACIDOS
+        For ii = 58 To 58
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+        Next
 
         ' SECCIÓN F:  INGRESOS Y EGRESOS A SALA DE ESTIMULACIÓN SERVICIO ITINERANTE Y ATENCIÓN DOMICILIARIA 
         'For ii = 63 To 66
@@ -1630,7 +1656,7 @@ Public Class Validador2019
             AP(ii) = xlHoja.Range("AP" & ii & "").Value
             AQ(ii) = xlHoja.Range("AQ" & ii & "").Value
             AR(ii) = xlHoja.Range("AR" & ii & "").Value
-            AS1(ii) = xlHoja.Range("AS" & ii & "").Value
+            AS1(ii) = xlHoja.Range("As" & ii & "").Value
         Next
 
         ' SECCIÓN O: EGRESOS DEL PROGRAMA DE SALUD  MENTAL POR ALTAS CLÍNICAS EN APS /ESPECIALIDAD
@@ -1677,7 +1703,7 @@ Public Class Validador2019
         '    AP(ii) = xlHoja.Range("AP" & ii & "").Value
         '    AQ(ii) = xlHoja.Range("AQ" & ii & "").Value
         '    AR(ii) = xlHoja.Range("AR" & ii & "").Value
-        '    AS1(ii) = xlHoja.Range("AS" & ii & "").Value
+        '    AS1(ii) = xlHoja.Range("As" & ii & "").Value
         '    AT(ii) = xlHoja.Range("AT" & ii & "").Value
         '    AU(ii) = xlHoja.Range("AU" & ii & "").Value
         '    AV(ii) = xlHoja.Range("AV" & ii & "").Value
@@ -1806,7 +1832,7 @@ Public Class Validador2019
         '    AP(ii) = xlHoja.Range("AP" & ii & "").Value
         '    AQ(ii) = xlHoja.Range("AQ" & ii & "").Value
         '    AR(ii) = xlHoja.Range("AR" & ii & "").Value
-        '    AS1(ii) = xlHoja.Range("AS" & ii & "").Value
+        '    AS1(ii) = xlHoja.Range("As" & ii & "").Value
         '    AT(ii) = xlHoja.Range("AT" & ii & "").Value
         '    AU(ii) = xlHoja.Range("AU" & ii & "").Value
         'Next
@@ -1855,7 +1881,7 @@ Public Class Validador2019
             AP(ii) = xlHoja.Range("AP" & ii & "").Value
             AQ(ii) = xlHoja.Range("AQ" & ii & "").Value
             AR(ii) = xlHoja.Range("AR" & ii & "").Value
-            AS1(ii) = xlHoja.Range("AS" & ii & "").Value
+            AS1(ii) = xlHoja.Range("As" & ii & "").Value
             AT(ii) = xlHoja.Range("AT" & ii & "").Value
             AU(ii) = xlHoja.Range("AU" & ii & "").Value
             AV(ii) = xlHoja.Range("AV" & ii & "").Value
@@ -1963,38 +1989,38 @@ Public Class Validador2019
         Select Case A01(1) ' VALIDACION 06
             Case Is <> C(58)
                 With Me.DataGridView1.Rows
-                    .Add("A01", " [A-B][E]", "VAL [06]", "ERROR", " Controles de salud sexual y Reproductiva, la Suma de Puérpera con recién Nacidos  10 Días hasta 28 Días,  celdas C18 a C21 y Controles de salud sexual y Reproductiva, Menor de 1 Mes, celdas  F31 a F33  deben ser igual a la Sección E REM05, Ingresos a control de salud recién Nacidos, Total menores de 28 Días,  celda C58", "[" & A01(1) & " - " & C(58) & "]")
+                    .Add("A01", " [A-B][E]", "VAL [06]", "Error", " Controles de salud sexual y Reproductiva, la Suma de Puérpera con recién Nacidos 10 Días hasta 28 Días, celdas C18 a C21 y Controles de salud sexual y Reproductiva, Menor de 1 Mes, celdas  F31 a F33  deben ser igual a la Sección E REM05, Ingresos a control de salud recién Nacidos, Total menores de 28 Días, celda C58", "[" & A01(1) & " - " & C(58) & "]")
                 End With
         End Select
         ' VALIDACIONES REM 03 *********************************************************************************
         Select Case A03(1) ' VALIDACION 07
             Case Is < C(63)
                 With Me.DataGridView1.Rows
-                    .Add("A03", " [A.3][F]", "VAL [07]", "ERROR", "La Derivación niños y niñas con Rezago, celda C43 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C63", "[" & A03(1) & " - " & C(63) & "]")
+                    .Add("A03", " [A.3][F]", "VAL [07]", "Error", "La Derivación niños y niñas con Rezago, celda C43 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C63", "[" & A03(1) & " - " & C(63) & "]")
                 End With
         End Select
         Select Case A03(2) ' VALIDACION 08
             Case Is < C(64)
                 With Me.DataGridView1.Rows
-                    .Add("A03", " [A.3][F]", "VAL [08]", "ERROR", " La Derivación niños y niñas con Rezago, celda C44 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C64.", "[" & A03(2) & " - " & C(64) & "]")
+                    .Add("A03", " [A.3][F]", "VAL [08]", "Error", " La Derivación niños y niñas con Rezago, celda C44 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C64.", "[" & A03(2) & " - " & C(64) & "]")
                 End With
         End Select
         Select Case A03(3) ' VALIDACION 09
             Case Is < C(65)
                 With Me.DataGridView1.Rows
-                    .Add("A03", " [A.3][F]", "VAL [09]", "ERROR", " La Derivación niños y niñas con Rezago, celda C45 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C65.", "[" & A03(3) & " - " & C(65) & "]")
+                    .Add("A03", " [A.3][F]", "VAL [09]", "Error", " La Derivación niños y niñas con Rezago, celda C45 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C65.", "[" & A03(3) & " - " & C(65) & "]")
                 End With
         End Select
         Select Case A03(4) ' VALIDACION 10
             Case Is < C(66)
                 With Me.DataGridView1.Rows
-                    .Add("A03", " [A.3][F]", "VAL [10]", "ERROR", "La Derivación niños y niñas con Rezago, celda C46 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C66.", "[" & A03(4) & " - " & C(66) & "]")
+                    .Add("A03", " [A.3][F]", "VAL [10]", "Error", "La Derivación niños y niñas con Rezago, celda C46 debe ser mayor o igual a Los Ingresos y Egresos a Sala de Estimulación en el Centro de Salud del REM05, sección F, celda C66.", "[" & A03(4) & " - " & C(66) & "]")
                 End With
         End Select
         Select Case A03(5) 'VALIDACION 11
             Case Is > C(11)
                 With Me.DataGridView1.Rows
-                    .Add("A03", " [B.2][A]", "VAL [11]", "ERROR", "La Aplicación de Escala según evaluación de Riesgo Psicosocial abreviada a gestantes, celda C75 debe ser menor o igual a Los Ingresos de Gestantes a Programa Prenatal,  Total Gestantes Ingresadas en el REM05, sección A, celda C11", "[" & A03(5) & " - " & C(11) & "]")
+                    .Add("A03", " [B.2][A]", "VAL [11]", "Error", "La Aplicación de Escala según evaluación de Riesgo Psicosocial abreviada a gestantes, celda C75 debe ser menor o igual a Los Ingresos de Gestantes a Programa Prenatal, Total Gestantes Ingresadas en el REM05, sección A, celda C11", "[" & A03(5) & " - " & C(11) & "]")
                 End With
         End Select
         '    '*************************************************************************************************************************************************************************************
@@ -2005,7 +2031,7 @@ Public Class Validador2019
         Select Case (K(11) + L(11) + M(11))
             Case Is > 0
                 With Me.DataGridView1.Rows
-                    .Add("A05", " [A]", "VAL [01]", "REVISAR", "Ingresos de Gestantes a Programa Prenatal, celda K11:M11 entre edades extremas, 45 a 55 años, deben ser corroboradas por profesional a cargo", "[" & (K(11) + L(11) + M(11)) & "]")
+                    .Add("A05", " [A]", "VAL [01]", "REVISAR", "Ingresos de Gestantes a Programa Prenatal, celda K11: M11 entre edades extremas, 45 a 55 años, deben ser corroboradas por profesional a cargo", "[" & (K(11) + L(11) + M(11)) & "]")
                 End With
         End Select
         '2************************************************************************************************************************************************************************************
@@ -2130,13 +2156,6 @@ Public Class Validador2019
                         End With
                 End Select
         End Select
-
-
-
-
-
-        MsgBox("REM05 OK")
-
 
 
         xlHoja = Nothing
@@ -2473,8 +2492,6 @@ Public Class Validador2019
         End Select
 
 
-        MsgBox("REM06")
-
         xlHoja = Nothing
     End Sub 'OK
     Sub REM07()
@@ -2720,8 +2737,6 @@ Public Class Validador2019
                         End With
                 End Select
         End Select
-
-        MsgBox("REM07")
 
         xlHoja = Nothing
     End Sub 'OK
@@ -3334,8 +3349,6 @@ Public Class Validador2019
                 End Select
         End Select
 
-        MsgBox("REM08")
-
         xlHoja = Nothing
     End Sub 'OK
     Sub REM09()
@@ -3615,98 +3628,10 @@ Public Class Validador2019
         '*************************************************************************************************************************************************************************************
         '*************************************************************************************************************************************************************************************
         '1************************************************************************************************************************************************************************************
-
-        Select Case G(41) ' g
-            Case Is < G(54)
+        Select Case (U(41) + V(41) + W(41) + X(41) + Y(41) + Z(41) + AA(41) + AB(41) + AC(41) + AD(41))
+            Case Is < (U(54) + V(54) + W(54) + X(54) + Y(54) + Z(54) + AA(54) + AB(54) + AC(54) + AD(54))
                 With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda G41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda G54 para mayores de 12 años", "[" & G(41) & "-" & G(54) & "]")
-                End With
-        End Select
-
-        Select Case H(41) 'h
-            Case Is < H(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda H41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda H54 para mayores de 12 años", "[" & H(41) & "-" & H(54) & "]")
-                End With
-        End Select
-        Select Case I(41) 'i
-            Case Is < I(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda I41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda I54 para mayores de 12 años", "[" & I(41) & "-" & I(54) & "]")
-                End With
-        End Select
-        Select Case J(41) 'j
-            Case Is < J(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda J41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda J54 para mayores de 12 años", "[" & J(41) & "-" & J(54) & "]")
-                End With
-        End Select
-        Select Case K(41) 'k
-            Case Is < K(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda K41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda K54 para mayores de 12 años", "[" & K(41) & "-" & K(54) & "]")
-                End With
-        End Select
-
-        Select Case L(41) 'L
-            Case Is < L(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda L41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda L54 para mayores de 12 años", "[" & L(41) & "-" & L(54) & "]")
-                End With
-        End Select
-        Select Case M(41) 'M
-            Case Is < M(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda M41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda M54 para mayores de 12 años", "[" & M(41) & "-" & M(54) & "]")
-                End With
-        End Select
-
-        Select Case N(41) 'N
-            Case Is < N(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda N41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda N54 para mayores de 12 años", "[" & N(41) & "-" & N(54) & "]")
-                End With
-        End Select
-
-        Select Case O(41) 'O
-            Case Is < O(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda O41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda O54 para mayores de 12 años", "[" & O(41) & "-" & O(54) & "]")
-                End With
-        End Select
-
-        Select Case P(41) 'P
-            Case Is < P(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda P41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda P54 para mayores de 12 años", "[" & P(41) & "-" & P(54) & "]")
-                End With
-        End Select
-
-        Select Case Q(41) 'Q
-            Case Is < Q(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda Q41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda Q54 para mayores de 12 años", "[" & Q(41) & "-" & Q(54) & "]")
-                End With
-        End Select
-
-        Select Case R(41) 'R
-            Case Is < R(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda R41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda R54 para mayores de 12 años", "[" & R(41) & "-" & R(54) & "]")
-                End With
-        End Select
-
-        Select Case S(41) 'S
-            Case Is < S(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda S41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda S54 para mayores de 12 años", "[" & S(41) & "-" & S(54) & "]")
-                End With
-        End Select
-
-        Select Case T(41)  'T
-            Case Is < T(54)
-                With Me.DataGridView1.Rows
-                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General, Celda T41 debe ser mayor o igual a  Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celda T54 para mayores de 12 años", "[" & T(41) & "-" & T(54) & "]")
+                    .Add("A09", " [C]", "VAL [01]", "ERROR", "Ingresos y Egresos en Establecimientos APS, Ingresos a tratamientos Odontología General,  U41 a AD41 debe ser Menor o igual a Total índice CEOD O COPD en Pacientes Ingresados Odontología General , Celdas U54  a AD54 para mayores de 12 años.", "[" & (U(41) + V(41) + W(41) + X(41) + Y(41) + Z(41) + AA(41) + AB(41) + AC(41) + AD(41)) & "-" & (U(54) + V(54) + W(54) + X(54) + Y(54) + Z(54) + AA(54) + AB(54) + AC(54) + AD(54)) & "]")
                 End With
         End Select
         '2************************************************************************************************************************************************************************************
@@ -3738,9 +3663,6 @@ Public Class Validador2019
                         End With
                 End Select
         End Select
-
-        MsgBox("REM09")
-
 
 
         xlHoja = Nothing
@@ -4389,8 +4311,6 @@ Public Class Validador2019
                 End Select
         End Select
 
-
-        MsgBox("REM11")
         xlHoja = Nothing
     End Sub 'OK
     Sub REM19a()
@@ -4569,8 +4489,6 @@ Public Class Validador2019
                 End If
         End Select
 
-
-        MsgBox("REM19a")
         xlHoja = Nothing
     End Sub 'OK
     Sub REM19b()
@@ -4622,8 +4540,6 @@ Public Class Validador2019
                 End Select
         End Select
 
-
-        MsgBox("REM19b")
         xlHoja = Nothing
     End Sub 'OK
     Sub REM21()
@@ -4700,7 +4616,6 @@ Public Class Validador2019
         '    F(ii) = xlHoja.Range("F" & ii & "").Value
         '    G(ii) = xlHoja.Range("G" & ii & "").Value
         'Next
-        MsgBox("REM21")
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
@@ -5307,9 +5222,6 @@ Public Class Validador2019
 
         End Select
 
-
-        MsgBox("REM23")
-
         xlHoja = Nothing
     End Sub 'OK
     Sub REM24()
@@ -5422,7 +5334,6 @@ Public Class Validador2019
         '    C(ii) = xlHoja.Range("C" & ii & "").Value
         '    D(ii) = xlHoja.Range("D" & ii & "").Value
         'Next
-        MsgBox("REM24")
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
@@ -5566,7 +5477,7 @@ Public Class Validador2019
         '    D(ii) = xlHoja.Range("D" & ii & "").Value
         '    E(ii) = xlHoja.Range("E" & ii & "").Value
         'Next
-        MsgBox("REM25")
+
         xlHoja = Nothing
     End Sub 'OK
     Sub REM26()
@@ -5637,9 +5548,6 @@ Public Class Validador2019
         '    B(ii) = xlHoja.Range("B" & ii & "").Value
         '    C(ii) = xlHoja.Range("C" & ii & "").Value
         'Next
-        MsgBox("REM26")
-
-
         xlHoja = Nothing
     End Sub 'OK
     Sub REM27()
@@ -5829,8 +5737,6 @@ Public Class Validador2019
                 End If
         End Select
 
-
-        MsgBox("REM27")
         xlHoja = Nothing
     End Sub 'OK 
     Sub REM28()
@@ -6310,7 +6216,6 @@ Public Class Validador2019
         '    AP(ii) = xlHoja.Range("AP" & ii & "").Value
         'Next
 
-
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
@@ -6402,8 +6307,6 @@ Public Class Validador2019
                 End Select
         End Select
 
-
-        MsgBox("REM28")
         xlHoja = Nothing
     End Sub 'OK
     Sub REM29()
@@ -6487,8 +6390,6 @@ Public Class Validador2019
                 End Select
         End Select
 
-
-        MsgBox("REM29")
 
         xlHoja = Nothing
     End Sub 'OK
@@ -6652,8 +6553,6 @@ Public Class Validador2019
                     .Add("A30", "[C]", "VAL [06]", "REVISAR", "Teleinformes en Establecimientos de Atención Primaria, Segunda Y Terciaria, celda B90:E90, debe ser iguales a registros en Modalidad de Compra de Servicio, Celda G90:H90", "[" & (B(90) + C(90) + D(90) + E(90)) & "-" & (G(90) + H(90)) & "]")
                 End With
         End Select
-
-        MsgBox("REM30")
 
         xlHoja = Nothing
     End Sub 'OK
@@ -6879,7 +6778,6 @@ Public Class Validador2019
         '    AP(ii) = xlHoja.Range("AP" & ii & "").Value
         '    AQ(ii) = xlHoja.Range("AQ" & ii & "").Value
         'NexT
-        MsgBox("REM31")
 
         xlHoja = Nothing
     End Sub 'OK
@@ -13322,9 +13220,6 @@ Public Class Validador2019
     End Function
     Private Sub BtnExportar_Click(sender As System.Object, e As System.EventArgs) Handles BtnExportar.Click
         GridAExcel(DataGridView1)
-    End Sub
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
-
     End Sub
 
 End Class
