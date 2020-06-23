@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Validador2019
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Validador2019
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Validador2019))
@@ -65,6 +65,8 @@ Partial Class Validador2019
         Me.lblversionPublicacion = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -537,12 +539,22 @@ Partial Class Validador2019
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Ver 1.2 Act. Junio 2020"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(-15, -15)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Validador2019
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1138, 525)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblversionPublicacion)
         Me.Controls.Add(Me.PictureBox1)
@@ -614,4 +626,6 @@ Partial Class Validador2019
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Public WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents Button1 As Button
 End Class
