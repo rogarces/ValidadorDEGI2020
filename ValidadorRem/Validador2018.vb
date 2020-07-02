@@ -71,26 +71,45 @@ Public Class Validador2019
     Private Sub BtnExportar_Click(sender As Object, e As EventArgs) Handles BtnExportar.Click
         Dim ExcelApp = New Microsoft.Office.Interop.Excel.Application
         Dim libro = ExcelApp.Workbooks.Add
+        Dim Planilla = New Microsoft.Office.Interop.Excel.Worksheet
 
-        Dim Fila As Integer = 2
+        Dim Fila As Integer = 6
         Dim Columna As Integer = 1
         Dim RowCount As Integer = DataGridView1.Rows.Count - 2
         Dim ColumnCount As Integer = DataGridView1.Columns.Count - 1
 
         Try
+            Planilla = libro.Sheets("Hoja1")
+
+            With Planilla
+                ' .Name = "erores"
+                .Range("A1").Value = "SERVICIO SALUD OSORNO"
+                .Range("A1:F1").MergeCells = True
+                .Range("A2").Value = "ESTABLECIMIENTO : " & Me.LBEstable.Text & " [ " & Me.ValidaCodigo & " ]" ' ESTABLECIMIENTO
+                .Range("A2:F2").MergeCells = True
+                .Range("A3").Value = "COMUNA : " & Me.LBcomuna.Text ' COMUNA
+                .Range("A3:E3").MergeCells = True
+                .Range("A4").Value = "MES : " & Me.LBmes.Text ' MES
+                .Range("A4:E4").MergeCells = True
+                .Range("A1:A4").Font.Bold = True
+                .Columns("E").AutoFit()
+                .Range("F4").Value = "TOTAL ERRORES : " & Me.LBerrores.Text ' TOTAL ERRORES
+                .Range("F4").Font.Bold = True
+                .Rows.Font.Size = 10
+                .Rows.Font.Name = "Calibri"
+            End With
+
             For nColumna As Integer = 0 To ColumnCount
-                libro.Worksheets("Hoja1").Cells(1, Columna) = DataGridView1.Columns(nColumna).HeaderText
-                libro.Worksheets("Hoja1").Cells(1, Columna).Font.Bold = True
+                libro.Worksheets("Hoja1").Cells(5, Columna) = DataGridView1.Columns(nColumna).HeaderText
+                ' libro.Worksheets("Hoja1").Cells(6, Columna).Font.Bold = True
 
                 For nFila As Integer = 0 To RowCount
                     libro.Worksheets("Hoja1").Cells(Fila, Columna) = DataGridView1.Rows(nFila).Cells(nColumna).Value
                     Fila = Fila + 1
                 Next
                 Columna = Columna + 1
-                Fila = 2
+                Fila = 6
             Next
-
-
 
             SaveFileDialog1.DefaultExt = "*.xlsx"
             SaveFileDialog1.FileName = "Libro1"
@@ -110,10 +129,6 @@ Public Class Validador2019
             libro = Nothing
             ExcelApp = Nothing
         End Try
-
-
-
-
     End Sub
     Private Sub Validador2018_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         BtnExportar.Enabled = False
