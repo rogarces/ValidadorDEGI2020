@@ -5133,30 +5133,30 @@ Public Class Validador2019
         Select Case CodigoEstablec
             Case 123100 ' HBO
                 Select Case (C(24) + AL(24) + AM(24))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
-                            .Add("A23", " [A]", "VAL [01]", "[ERROR]", "HOSPITAL PURRANQUE, No debe registrar Ingresos Agudos Según Diagnostico celdas C24 a AM24", "[" & (C(24) + AL(24) + AM(24)) & "]")
+                            .Add("A23", " [A]", "VAL [01]", "[ERROR]", "HOSPITAL BASE, No debe registrar Ingresos Agudos Según Diagnostico celdas C24 a AM24", "[" & (C(24) + AL(24) + AM(24)) & "]")
                         End With
                 End Select
             Case 123101 ' HOSPITAL PURRANQUE
                 Select Case (C(24) + AL(24) + AM(24))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [A]", "VAL [01]", "[ERROR]", "HOSPITAL PURRANQUE, No debe registrar Ingresos Agudos Según Diagnostico celdas C24 a AM24", "[" & (C(24) + AL(24) + AM(24)) & "]")
                         End With
                 End Select
             Case 123102 ' HOSPITAL RIO NEGRO
                 Select Case (C(24) + AL(24) + AM(24))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [A]", "VAL [01]", "[ERROR]", "HOSPITAL RIO NEGRO, No debe registrar Ingresos Agudos Según Diagnostico celdas C24 a AM24", "[" & (C(24) + AL(24) + AM(24)) & "]")
                         End With
                 End Select
             Case Else ' Resto Establecimientos
                 Select Case (C(24) + AL(24) + AM(24))
-                    Case Is = 0
+                    Case Is <> 0
                         With Me.DataGridView1.Rows
-                            .Add("A23", " [A]", "VAL [01]", "[ERROR]", "Ingresos Agudos Según Diagnostico: Deben registrar todos los Establecimientos, con excepción el HBSJO, HPU y HRN, celdas C24 a AM24", "[" & (C(24) + AL(24) + AM(24)) & "]")
+                            .Add("A23", " [A]", "VAL [01]", "[REVISAR]", "Ingresos Agudos Según Diagnostico: Deben registrar todos los Establecimientos, con excepción el HBSJO, HPU y HRN, celdas C24 a AM24", "[" & (C(24) + AL(24) + AM(24)) & "]")
                         End With
                 End Select
         End Select
@@ -5164,30 +5164,30 @@ Public Class Validador2019
         Select Case CodigoEstablec
             Case 123100 ' HBO
                 Select Case (C(43) + AL(43))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [B]", "VAL [02]", "[ERROR]", "HBSJO, No debe registrar Ingreso Crónico Según Diagnostico, celdas C43 a AL43", "[" & (C(43) + AL(43)) & "]")
                         End With
                 End Select
             Case 123101 ' HPU
                 Select Case (C(43) + AL(43))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [B]", "VAL [02]", "[ERROR]", "HPU, No debe registrar Ingreso Crónico Según Diagnostico, celdas C43 a AL43", "[" & (C(43) + AL(43)) & "]")
                         End With
                 End Select
             Case 123102 ' HRN
                 Select Case (C(43) + AL(43))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [B]", "VAL [02]", "[ERROR]", "HRN, No debe registrar Ingreso Crónico Según Diagnostico, celdas C43 a AL43", "[" & (C(43) + AL(43)) & "]")
                         End With
                 End Select
             Case Else
                 Select Case (C(43) + AL(43))
-                    Case Is = 0
+                    Case Is <> 0
                         With Me.DataGridView1.Rows
-                            .Add("A23", " [B]", "VAL [02]", "[ERROR]", "Ingreso Crónico Según Diagnostico: Deben registrar todos los Establecimientos, con excepción el HBSJO, HPU y HRN, celdas C43 a AL43", "[" & (C(43) + AL(43)) & "]")
+                            .Add("A23", " [B]", "VAL [02]", "[REVISAR]", "Ingreso Crónico Según Diagnostico: Deben registrar todos los Establecimientos, con excepción el HBSJO, HPU y HRN, celdas C43 a AL43", "[" & (C(43) + AL(43)) & "]")
                         End With
                 End Select
         End Select
@@ -5195,30 +5195,30 @@ Public Class Validador2019
         Select Case CodigoEstablec
             Case 123100 ' HBO
                 Select Case C(62)
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [D]", "VAL [03]", "[ERROR]", "HBSJO No Debe Registrar, celda C62, Consultas de Morbilidad por Enfermedades Respiratorias en Salas, IRA, ERA y Mixta", "[" & C(62) & "]")
                         End With
                 End Select
             Case 123101 ' HPU
                 Select Case C(62)
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [D]", "VAL [03]", "[ERROR]", "HPU No Debe Registrar, celda C62, Consultas de Morbilidad por Enfermedades Respiratorias en Salas, IRA, ERA y Mixta", "[" & C(62) & "]")
                         End With
                 End Select
             Case 123102 ' HRN
                 Select Case C(62)
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [D]", "VAL [03]", "[ERROR]", "HRN No Debe Registrar, celda C62, Consultas de Morbilidad por Enfermedades Respiratorias en Salas, IRA, ERA y Mixta", "[" & C(62) & "]")
                         End With
                 End Select
             Case Else
                 Select Case C(62)
-                    Case Is = 0
+                    Case Is <> 0
                         With Me.DataGridView1.Rows
-                            .Add("A23", " [D]", "VAL [03]", "[ERROR]", " Consultas de Morbilidad por Enfermedades Respiratorias en Salas, IRA, ERA y Mixta, corresponde ingresar todos los Establecimientos, con excepción de HBSJO, HPU y HRN, celda C62", "[" & C(62) & "]")
+                            .Add("A23", " [D]", "VAL [03]", "[REVISAR]", " Consultas de Morbilidad por Enfermedades Respiratorias en Salas, IRA, ERA y Mixta, corresponde ingresar todos los Establecimientos, con excepción de HBSJO, HPU y HRN, celda C62", "[" & C(62) & "]")
                         End With
                 End Select
         End Select
@@ -5226,30 +5226,30 @@ Public Class Validador2019
         Select Case CodigoEstablec
             Case 123100 'hbo
                 Select Case (C(70))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [E]", "VAL [04]", "[ERROR]", "HBSJO NO debe Registrar Controles Realizados,de las celdas C67 a C70", "[" & C(70) & "]")
                         End With
                 End Select
             Case 123101 ' hpu
                 Select Case (C(70))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [E]", "VAL [04]", "[ERROR]", "HPU NO debe Registrar Controles Realizados,de las celdas C67 a C70", "[" & C(70) & "]")
                         End With
                 End Select
             Case 123102 'hrn
                 Select Case (C(70))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [E]", "VAL [04]", "[ERROR]", "HRN NO debe Registrar Controles Realizados,de las celdas C67 a C70", "[" & C(70) & "]")
                         End With
                 End Select
             Case Else
                 Select Case (C(70))
-                    Case Is = 0
+                    Case Is <> 0
                         With Me.DataGridView1.Rows
-                            .Add("A23", " [E]", "VAL [04]", "[ERROR]", "Controles Realizados, corresponde ingresar todos los Establecimientos, con excepción de HBSJO, HPU y HRN, celdas C67 a C70", "[" & C(70) & "]")
+                            .Add("A23", " [E]", "VAL [04]", "[REVISAR]", "Controles Realizados, corresponde ingresar todos los Establecimientos, con excepción de HBSJO, HPU y HRN, celdas C67 a C70", "[" & C(70) & "]")
                         End With
                 End Select
         End Select
@@ -5257,28 +5257,28 @@ Public Class Validador2019
         Select Case CodigoEstablec
             Case 123100 ' HBSJO
                 Select Case (C(77))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [F]", "VAL [05]", "[ERROR]", "HBSJO NO debe Registrar, Seguimiento de Atenciones Realizadas en Agudos,celdas C75 a C77", "[" & C(77) & "]")
                         End With
                 End Select
             Case 123101 ' HPU
                 Select Case (C(77))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [F]", "VAL [05]", "[ERROR]", "HPU NO debe Registrar, Seguimiento de Atenciones Realizadas en Agudos,celdas C75 a C77", "[" & C(77) & "]")
                         End With
                 End Select
             Case 123102 ' HRN
                 Select Case (C(77))
-                    Case Is <> 0
+                    Case Is = 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [F]", "VAL [05]", "[ERROR]", "HRN NO debe Registrar, Seguimiento de Atenciones Realizadas en Agudos,celdas C75 a C77", "[" & C(77) & "]")
                         End With
                 End Select
             Case Else
                 Select Case (C(77))
-                    Case Is = 0
+                    Case Is <> 0
                         With Me.DataGridView1.Rows
                             .Add("A23", " [F]", "VAL [05]", "[ERROR]", "Seguimiento de Atenciones Realizadas en Agudos, corresponde ingresar todos los Establecimientos, con excepción de HBSJO, HPU , HRN celdas C75 a C77", "[" & C(77) & "]")
                         End With
