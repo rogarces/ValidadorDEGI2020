@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>ValidadorRemDEGI.My.MyApplication</StartupObject>
     <RootNamespace>ValidadorRemDEGI</RootNamespace>
-    <AssemblyName>Validador Rem 2019</AssemblyName>
+    <AssemblyName>Validador Rem 2020</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -27,19 +27,18 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://estadisticas.ssosorno.cl/estadisticas/validador/Instalador/</UpdateUrl>
     <TargetCulture>es-CL</TargetCulture>
-    <ProductName>Validador Rem</ProductName>
+    <ProductName>Validador Rem 2020</ProductName>
     <PublisherName>DEGI</PublisherName>
-    <SuiteName>Estadistica Osorno</SuiteName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <SuiteName>Validador DEGI</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>Absolute</BootstrapperComponentsLocation>
     <BootstrapperComponentsUrl>\\10.8.152.199\anonymous\Validador REM</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -49,7 +48,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Validador Rem 2019.xml</DocumentationFile>
+    <DocumentationFile>Validador Rem 2020.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <RegisterForComInterop>true</RegisterForComInterop>
     <Prefer32Bit>false</Prefer32Bit>
@@ -61,7 +60,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Validador Rem 2019.xml</DocumentationFile>
+    <DocumentationFile>Validador Rem 2020.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <RegisterForComInterop>true</RegisterForComInterop>
     <Prefer32Bit>false</Prefer32Bit>
@@ -79,7 +78,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>books.ico</ApplicationIcon>
+    <ApplicationIcon>protection.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>F1FC9235CBCF5AB9F5E7BD9F1F82779EB3619702</ManifestCertificateThumbprint>
@@ -184,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="books.ico" />
+    <Content Include="protection.ico" />
     <None Include="Resources\Logo-Servicio-de-Salud-Osorno.jpg" />
     <None Include="Resources\degi2019.png" />
     <None Include="Resources\LOGO DEGI 2.jpg" />

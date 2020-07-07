@@ -92,7 +92,7 @@ Public Class Validador2019
                 .Range("A4").Value = "MES : " & Me.LBmes.Text ' MES
                 .Range("A4:E4").MergeCells = True
                 .Range("A1:A4").Font.Bold = True
-                .Columns("E").AutoFit()
+
                 .Range("F4").Value = "TOTAL ERRORES : " & Me.LBerrores.Text ' TOTAL ERRORES
                 .Range("F4").Font.Bold = True
                 .Rows.Font.Size = 10
@@ -101,7 +101,8 @@ Public Class Validador2019
 
             For nColumna As Integer = 0 To ColumnCount
                 libro.Worksheets("Hoja1").Cells(5, Columna) = DataGridView1.Columns(nColumna).HeaderText
-                ' libro.Worksheets("Hoja1").Cells(6, Columna).Font.Bold = True
+                libro.Worksheets("Hoja1").Cells(5, Columna).Font.Bold = True
+
 
                 For nFila As Integer = 0 To RowCount
                     libro.Worksheets("Hoja1").Cells(Fila, Columna) = DataGridView1.Rows(nFila).Cells(nColumna).Value
@@ -112,7 +113,7 @@ Public Class Validador2019
             Next
 
             SaveFileDialog1.DefaultExt = "*.xlsx"
-            SaveFileDialog1.FileName = "Libro1"
+            SaveFileDialog1.FileName = "Vali-" & CodigoEstablec
             SaveFileDialog1.Filter = "Libro de Excel (*.xlsx) | *.xlsx"
 
             ' GUARDAMOS EL ARCHIVO EXCEL DE LAS VALIDACIONES
