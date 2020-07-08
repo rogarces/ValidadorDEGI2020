@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("Validador Rem")>
+<Assembly: AssemblyTitle("Validaciones Tecnicas Para REM")>
 <Assembly: AssemblyDescription("VALIDADOR 2020")>
 <Assembly: AssemblyCompany("DEGI")>
 <Assembly: AssemblyProduct("ValidadorRem")>

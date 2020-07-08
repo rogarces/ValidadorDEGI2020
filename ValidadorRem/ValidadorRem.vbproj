@@ -16,10 +16,10 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\xampp\htdocs\www\Estadisticas\estadisticas\validador\Instalador\</PublishUrl>
-    <Install>false</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://10.8.152.199/estadisticas/validador/Instalador/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -27,19 +27,21 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://estadisticas.ssosorno.cl/estadisticas/validador/Instalador/</InstallUrl>
     <UpdateUrl>http://estadisticas.ssosorno.cl/estadisticas/validador/Instalador/</UpdateUrl>
     <TargetCulture>es-CL</TargetCulture>
     <ProductName>Validador Rem 2020</ProductName>
     <PublisherName>DEGI</PublisherName>
     <SuiteName>Validador DEGI</SuiteName>
-    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>1</ApplicationRevision>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsUrl>\\10.8.152.199\anonymous\Validador REM</BootstrapperComponentsUrl>
+    <BootstrapperComponentsUrl>http://estadisticas.ssosorno.cl/estadisticas/validador/Instalador/Predeterminados</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -249,6 +251,7 @@
   <ItemGroup>
     <Folder Include="Scripts\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
