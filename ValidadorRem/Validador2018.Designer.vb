@@ -66,6 +66,7 @@ Partial Class Validador2019
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -532,11 +533,22 @@ Partial Class Validador2019
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(974, 257)
+        Me.Label1.Location = New System.Drawing.Point(1016, 255)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 14)
+        Me.Label1.Size = New System.Drawing.Size(81, 14)
         Me.Label1.TabIndex = 32
-        Me.Label1.Text = "Ver 1.2 Act. Junio 2020"
+        Me.Label1.Text = "1.2 Junio 2020"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(920, 255)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(95, 14)
+        Me.Label2.TabIndex = 33
+        Me.Label2.Text = "Version Validador:"
         '
         'Validador2019
         '
@@ -544,6 +556,7 @@ Partial Class Validador2019
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1138, 525)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblversionPublicacion)
         Me.Controls.Add(Me.PictureBox1)
@@ -555,7 +568,6 @@ Partial Class Validador2019
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.ForeColor = System.Drawing.SystemColors.Control
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Validador2019"
@@ -616,4 +628,5 @@ Partial Class Validador2019
     Public WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents Label2 As Label
 End Class
