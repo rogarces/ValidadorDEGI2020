@@ -2899,47 +2899,47 @@ Public Class Validador2019
         '    AN(ii) = xlHoja.Range("AN" & ii & "").Value
         'Next
         '' SECCIÓN A.3: ATENCIONES DE URGENCIA REALIZADAS EN ESTABLECIMIENTOS DE BAJA COMPLEJIDAD
-        'For ii = 27 To 32
-        '    B(ii) = xlHoja.Range("B" & ii & "").Value
-        '    C(ii) = xlHoja.Range("C" & ii & "").Value
-        '    D(ii) = xlHoja.Range("D" & ii & "").Value
-        '    E(ii) = xlHoja.Range("E" & ii & "").Value
-        '    F(ii) = xlHoja.Range("F" & ii & "").Value
-        '    G(ii) = xlHoja.Range("G" & ii & "").Value
-        '    H(ii) = xlHoja.Range("H" & ii & "").Value
-        '    I(ii) = xlHoja.Range("I" & ii & "").Value
-        '    J(ii) = xlHoja.Range("J" & ii & "").Value
-        '    K(ii) = xlHoja.Range("K" & ii & "").Value
-        '    L(ii) = xlHoja.Range("L" & ii & "").Value
-        '    M(ii) = xlHoja.Range("M" & ii & "").Value
-        '    N(ii) = xlHoja.Range("N" & ii & "").Value
-        '    O(ii) = xlHoja.Range("O" & ii & "").Value
-        '    P(ii) = xlHoja.Range("P" & ii & "").Value
-        '    Q(ii) = xlHoja.Range("Q" & ii & "").Value
-        '    R(ii) = xlHoja.Range("R" & ii & "").Value
-        '    S(ii) = xlHoja.Range("S" & ii & "").Value
-        '    T(ii) = xlHoja.Range("T" & ii & "").Value
-        '    U(ii) = xlHoja.Range("U" & ii & "").Value
-        '    V(ii) = xlHoja.Range("V" & ii & "").Value
-        '    W(ii) = xlHoja.Range("W" & ii & "").Value
-        '    X(ii) = xlHoja.Range("X" & ii & "").Value
-        '    Y(ii) = xlHoja.Range("Y" & ii & "").Value
-        '    Z(ii) = xlHoja.Range("Z" & ii & "").Value
-        '    AA(ii) = xlHoja.Range("AA" & ii & "").Value
-        '    AB(ii) = xlHoja.Range("AB" & ii & "").Value
-        '    AC(ii) = xlHoja.Range("AC" & ii & "").Value
-        '    AD(ii) = xlHoja.Range("AD" & ii & "").Value
-        '    AE(ii) = xlHoja.Range("AE" & ii & "").Value
-        '    AF(ii) = xlHoja.Range("AF" & ii & "").Value
-        '    AG(ii) = xlHoja.Range("AG" & ii & "").Value
-        '    AH(ii) = xlHoja.Range("AH" & ii & "").Value
-        '    AI(ii) = xlHoja.Range("AI" & ii & "").Value
-        '    AJ(ii) = xlHoja.Range("AJ" & ii & "").Value
-        '    AK(ii) = xlHoja.Range("AK" & ii & "").Value
-        '    AL(ii) = xlHoja.Range("AL" & ii & "").Value
-        '    AM(ii) = xlHoja.Range("AM" & ii & "").Value
-        '    AN(ii) = xlHoja.Range("AN" & ii & "").Value
-        'Next
+        For ii = 27 To 32
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+            R(ii) = xlHoja.Range("R" & ii & "").Value
+            S(ii) = xlHoja.Range("S" & ii & "").Value
+            T(ii) = xlHoja.Range("T" & ii & "").Value
+            U(ii) = xlHoja.Range("U" & ii & "").Value
+            V(ii) = xlHoja.Range("V" & ii & "").Value
+            W(ii) = xlHoja.Range("W" & ii & "").Value
+            X(ii) = xlHoja.Range("X" & ii & "").Value
+            Y(ii) = xlHoja.Range("Y" & ii & "").Value
+            Z(ii) = xlHoja.Range("Z" & ii & "").Value
+            AA(ii) = xlHoja.Range("AA" & ii & "").Value
+            AB(ii) = xlHoja.Range("AB" & ii & "").Value
+            AC(ii) = xlHoja.Range("AC" & ii & "").Value
+            AD(ii) = xlHoja.Range("AD" & ii & "").Value
+            AE(ii) = xlHoja.Range("AE" & ii & "").Value
+            AF(ii) = xlHoja.Range("AF" & ii & "").Value
+            AG(ii) = xlHoja.Range("AG" & ii & "").Value
+            AH(ii) = xlHoja.Range("AH" & ii & "").Value
+            AI(ii) = xlHoja.Range("AI" & ii & "").Value
+            AJ(ii) = xlHoja.Range("AJ" & ii & "").Value
+            AK(ii) = xlHoja.Range("AK" & ii & "").Value
+            AL(ii) = xlHoja.Range("AL" & ii & "").Value
+            AM(ii) = xlHoja.Range("AM" & ii & "").Value
+            AN(ii) = xlHoja.Range("AN" & ii & "").Value
+        Next
         '' SECCIÓN A.4: ATENCIONES DE URGENCIA REALIZADAS EN ESTABLECIMIENTOS  ATENCIÓN PRIMARIA NO SAPU
         'For ii = 37 To 42
         '    B(ii) = xlHoja.Range("B" & ii & "").Value
@@ -3379,14 +3379,14 @@ Public Class Validador2019
                 Select Case (B(12) + B(13) + B(14))
                     Case Is <> 0
                         With Me.DataGridView1.Rows
-                            .Add("A08", " [A.1]", "VAL [01]", "[ERROR]", "Las Atenciones Realizadas en UEH de Hosp. de Alta Complejidad, celdas C12 a AA14 corresponde solo a HBSJO y HPU", "[" & (B(12) + B(13) + B(14)) & "]")
+                            .Add("A08", " [A.1]", "VAL [01]", "[ERROR]", "Las Atenciones Realizadas en UEH Por Hospitales de ALTA Complejidad, celdas C12 a AA14 corresponde solo a HBSJO y HPU", "[" & (B(12) + B(13) + B(14)) & "]")
                         End With
                 End Select
             Case Else ' RESTO ESTABLECIMIENTOS 
                 Select Case (B(27) + B(28) + B(29) + B(30) + B(31) + B(32))
                     Case Is <> 0
                         With Me.DataGridView1.Rows
-                            .Add("A08", " [A.3]", "VAL [01]", "[ERROR]", "Las Atenciones Realizadas en UEH de Hosp. de Baja Complejidad, celdas C12 a AA14 corresponde solo a HBSJO y HPU", "[" & (B(27) + B(28) + B(29) + B(30) + B(31) + B(32)) & "]")
+                            .Add("A08", " [A.3]", "VAL [01]", "[ERROR]", "Las Atenciones Realizadas en UEH Por Hospitales de BAJA Complejidad, celdas C27 a AA32 ", "[" & (B(27) + B(28) + B(29) + B(30) + B(31) + B(32)) & "]")
                         End With
                 End Select
         End Select
@@ -3399,11 +3399,11 @@ Public Class Validador2019
                             .Add("A08", " [A.1][B]", "VAL [02]", "[ERROR]", " Las Atenciones Realizadas en UEH de Hosp. de Alta Complejidad, celdas B12 debe ser igual a la sección B, Categorizaciones de Pacientes, Previa a la Atención Medica, celda B63", "[" & B(63) & "-" & B(12) & "]")
                         End With
                 End Select
-            Case Else
+            Case Else ' RESPTO DE ESTABLECIMIENTOS 
                 Select Case B(63)
                     Case Is <> B(27)
                         With Me.DataGridView1.Rows
-                            .Add("A08", " [A.3][B]", "VAL [02]", "[ERROR]", " Las Atenciones Realizadas en UEH de Hosp. de Baja Complejidad, celdas B27 debe ser igual a la sección B, Categorizaciones de Pacientes, Previa a la Atención Medica, celda B63", "[" & B(63) & "-" & B(27) & "]")
+                            .Add("A08", " [A.3][B]", "VAL [02]", "[ERROR]", " Las Atenciones Realizadas en UEH de Hosp. de BAJA Complejidad, celdas B27 debe ser igual a la sección B, Categorizaciones de Pacientes, Previa a la Atención Medica, celda B63", "[" & B(63) & "-" & B(27) & "]")
                         End With
                 End Select
         End Select
@@ -3724,18 +3724,17 @@ Public Class Validador2019
                 End With
         End Select
         '3************************************************************************************************************************************************************************************
-        Select Case CodigoEstablec '
-            Case 123300, 123301, 123302, 123303, 123306, 123310, 123304
-            Case Else
-                Select Case (D(149) + D(150) + D(151) + D(152) + D(153) + D(154) + D(155) + D(156) + D(157) + D(158) + D(159) + D(160) + D(161) + D(162) + D(163) + D(164) + D(165) + D(166) + D(167) + D(168) + D(169) + D(170) + D(171) + D(172) + D(173) + D(174) + D(175) + D(176) + D(177) + D(178) + D(179) + D(180) + D(181))
-                    Case Is <> 0 ' RESTO DE ESTABLECIMIENTOS
-                        With Me.DataGridView1.Rows
-                            .Add("A09", " [G]", "VAL [03]", "[ERROR]", "Programas Especiales y GES, celdas D149 a D181 solo deben registrar los Cesfam de Osorno, cesfam Entre lagos", "[" & (D(149) + D(150) + D(151) + D(152) + D(153) + D(154) + D(155) + D(156) + D(157) + D(158) + D(159) + D(160) + D(161) + D(162) + D(163) + D(164) + D(165) + D(166) + D(167) + D(168) + D(169) + D(170) + D(171) + D(172) + D(173) + D(174) + D(175) + D(176) + D(177) + D(178) + D(179) + D(180) + D(181)) & "]")
-                        End With
-                End Select
-        End Select
+        'Select Case CodigoEstablec '
+        '    Case 123300, 123301, 123302, 123303, 123306, 123310, 123304
+        '    Case Else
+        '        Select Case (D(149) + D(150) + D(151) + D(152) + D(153) + D(154) + D(155) + D(156) + D(157) + D(158) + D(159) + D(160) + D(161) + D(162) + D(163) + D(164) + D(165) + D(166) + D(167) + D(168) + D(169) + D(170) + D(171) + D(172) + D(173) + D(174) + D(175) + D(176) + D(177) + D(178) + D(179) + D(180) + D(181))
+        '            Case Is <> 0 ' RESTO DE ESTABLECIMIENTOS
+        '                With Me.DataGridView1.Rows
+        '                    .Add("A09", " [G]", "VAL [03]", "[ERROR]", "Programas Especiales y GES, celdas D149 a D181 solo deben registrar los Cesfam de Osorno, cesfam Entre lagos", "[" & (D(149) + D(150) + D(151) + D(152) + D(153) + D(154) + D(155) + D(156) + D(157) + D(158) + D(159) + D(160) + D(161) + D(162) + D(163) + D(164) + D(165) + D(166) + D(167) + D(168) + D(169) + D(170) + D(171) + D(172) + D(173) + D(174) + D(175) + D(176) + D(177) + D(178) + D(179) + D(180) + D(181)) & "]")
+        '                End With
+        '        End Select
+        'End Select
         '4************************************************************************************************************************************************************************************
-
         Select Case CodigoEstablec
             Case 123103, 123104, 123105
                 Select Case (D(146) + D(147) + D(148) + D(149) + D(150) + D(151) + D(152) + D(153) + D(154) + D(155) + D(156) + D(157) + D(158) + D(159) + D(160) + D(161) + D(162) + D(163) + D(164) + D(165) + D(166) + D(167) + D(168) + D(169) + D(170) + D(171) + D(172) + D(173) + D(174) + D(175) + D(176) + D(177) + D(178) + D(179) + D(180) + D(181))
