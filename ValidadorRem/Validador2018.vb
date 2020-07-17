@@ -1290,10 +1290,28 @@ Public Class Validador2019
                 End If
         End Select
         '3************************************************************************************************************************************************************************************
-        Select Case (B(37) + B(38) + B(39))
-            Case Is <> (B(112) + B(113) + B(114))
+        'Select Case (B(37) + B(38) + B(39))
+        '    Case Is <> (B(112) + B(113) + B(114))
+        '        With Me.DataGridView1.Rows
+        '            .Add("A04", "[B][L]", "VAL [03]", "[ERROR]", "Consultas de Profesionales no médicos, Consultas por Nutricionistas, Celda B37:B39, debe ser igual a Sección L, Clasificación de consulta Nutricional por grupo de edad, Celdas B112:B114", "[" & (B(37) + B(38) + B(39)) & "-" & (B(112) + B(113) + B(114)) & "]")
+        '        End With
+        'End Select
+        Select Case (B(37))
+            Case Is <> B(114)
                 With Me.DataGridView1.Rows
-                    .Add("A04", "[B][L]", "VAL [03]", "[ERROR]", "Consultas de Profesionales no médicos, Consultas por Nutricionistas, Celda B37:B39, debe ser igual a Sección L, Clasificación de consulta Nutricional por grupo de edad, Celdas B112:B114", "[" & (B(37) + B(38) + B(39)) & "-" & (B(112) + B(113) + B(114)) & "]")
+                    .Add("A04", "[B][L]", "VAL [03]", "[ERROR]", "Consultas de Profesionales no médicos, Consultas por Nutricionistas por mal nutricion con Deficit, Celda B37, debe ser igual a Sección L, Clasificación de consulta Nutricional por grupo de edad, Celdas B114", "[" & B(37) & "-" & B(114) & "]")
+                End With
+        End Select
+        Select Case (B(38))
+            Case Is <> B(113)
+                With Me.DataGridView1.Rows
+                    .Add("A04", "[B][L]", "VAL [03]", "[ERROR]", "Consultas de Profesionales no médicos, Consultas por Nutricionistas Por mal nutricion Exceso, Celda B38, debe ser igual a Sección L, Clasificación de consulta Nutricional por grupo de edad, Celdas B113", "[" & B(38) & "-" & B(113) & "]")
+                End With
+        End Select
+        Select Case (B(39))
+            Case Is <> B(113)
+                With Me.DataGridView1.Rows
+                    .Add("A04", "[B][L]", "VAL [03]", "[ERROR]", "Consultas de Profesionales no médicos, Consultas por Nutricionistas por estado nutricional normal, Celda B39, debe ser igual a Sección L, Clasificación de consulta Nutricional por grupo de edad, Celdas B112", "[" & B(39) & "-" & B(112) & "]")
                 End With
         End Select
         '4************************************************************************************************************************************************************************************
