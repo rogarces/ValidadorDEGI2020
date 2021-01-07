@@ -12422,7 +12422,7 @@ Public Class Validador2019
         xlHoja = Nothing
     End Sub
     Sub P1()
-        Dim ii, B(139), C(139), D(139), E(139), F(139), G(139), H(139), I(139), J(139), K(139), L(139), M(139), N(139), O(139), P(139) As Integer
+        Dim ii, B(147), C(147), D(147), E(147), F(147), G(147), H(147), I(147), J(147), K(147), L(147), M(147), N(147), O(147), P(147) As Integer
         xlHoja = xlLibro.Worksheets("P1")
         'SECCION A: POBLACIÓN EN CONTROL SEGÚN MÉTODO DE REGULACIÓN DE FERTILIDAD
         For ii = 11 To 33
@@ -12495,7 +12495,6 @@ Public Class Validador2019
             E(ii) = xlHoja.Range("E" & ii & "").Value
         Next
         'SECCION H: GESTANTES EN CONTROL DE ENFERMEDADES TRANSMISIBLES (HEPATITIS B, CHAGAS)
-
         For ii = 108 To 117
             B(ii) = xlHoja.Range("B" & ii & "").Value
             C(ii) = xlHoja.Range("C" & ii & "").Value
@@ -12503,8 +12502,21 @@ Public Class Validador2019
             E(ii) = xlHoja.Range("E" & ii & "").Value
         Next
         'SECCIÓN I: POBLACIÓN EN CONTROL POR PATOLOGÍAS DE ALTO RIESGO OBSTÉTRICO
-        For ii = 121 To 139
+        For ii = 121 To 125
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+        Next
+        For ii = 129 To 147
             B(ii) = xlHoja.Range("B" & ii & "").Value
+
         Next
 
         MsgBox("REMP1 OK")
@@ -13028,7 +13040,7 @@ Public Class Validador2019
             F(ii) = xlHoja.Range("F" & ii & "").Value
             G(ii) = xlHoja.Range("G" & ii & "").Value
         Next
-        For ii = 69 To 74
+        For ii = 69 To 72
             C(ii) = xlHoja.Range("C" & ii & "").Value
             D(ii) = xlHoja.Range("D" & ii & "").Value
             E(ii) = xlHoja.Range("E" & ii & "").Value
@@ -13036,7 +13048,7 @@ Public Class Validador2019
             G(ii) = xlHoja.Range("G" & ii & "").Value
         Next
         'SECCIÓN D: POBLACION EN CONTROL (EMPA VIGENTE) SEGÚN COMPENSACION Y ESTADO NUTRICIONAL 
-        For ii = 81 To 87
+        For ii = 79 To 85
             C(ii) = xlHoja.Range("C" & ii & "").Value
             D(ii) = xlHoja.Range("D" & ii & "").Value
             E(ii) = xlHoja.Range("E" & ii & "").Value
