@@ -6940,17 +6940,15 @@ Public Class Validador2019
         Return True
     End Function
     Function CargaSerieP()
-        Select Case MsgBox("Desea efectuar validacion serie P", MsgBoxStyle.YesNo, "Carga de validación")
-
+        Select Case MsgBox("Desea efectuar validación Serie P", MsgBoxStyle.YesNo, "Carga de validación")
             Case MsgBoxResult.Yes
                 ValidarNombre = Microsoft.VisualBasic.Left(NombreArchivo, 6)
                 If IsNumeric(ValidarNombre) Then
                     CodigoEstablec = CInt(ValidarNombre)
 
                     Select Case CodigoEstablec ' todos los establecimientos del servicio
-                        Case 123000, 123010, 123011, 123012, 123030, 123100, 123101, 123102, 123103, 123104, 123105, 123300, 123301, 123302, 123303, 123304, 123305, 123306, 123307, 123309, 123310, 123311, 123312, 123402, 123404, 123406, 123407, 123408, 123410, 123411, 123412, 123413, 123414, 123415, 123416, 123417, 123419, 123420, 123422, 123423, 123424, 123425, 123426, 123427, 123428, 123430, 123431, 123432, 123434, 123435, 123436, 123437, 123700, 123701, 123705, 123709, 123800, 200209, 123207, 200445, 200455, 200490, 200248, 200477
+                        Case 123000, 123010, 123011, 123012, 123030, 123100, 123101, 123102, 123103, 123104, 123105, 123300, 123301, 123302, 123303, 123304, 123305, 123306, 123307, 123309, 123310, 123311, 123312, 123402, 123404, 123406, 123407, 123408, 123410, 123411, 123412, 123413, 123414, 123415, 123416, 123417, 123419, 123420, 123422, 123423, 123424, 123425, 123426, 123427, 123428, 123430, 123431, 123432, 123434, 123435, 123436, 123437, 123700, 123701, 123705, 123709, 123800, 200209, 123207, 200445, 200455, 200490, 200248, 200477, 200539
                             'lo que valida
-
                             Try
                                 xlExcel = New Excel.Application
                                 xlLibro = xlExcel.Workbooks.Open(OpenFileDialog1.FileName)
@@ -6967,7 +6965,7 @@ Public Class Validador2019
                                     Me.LblHojaControl.Text = ValidaHojaControl
 
                                     xlLibro.Saved = True
-                                    xlExcel.ActiveWorkbook.Close()
+                                    xlLibro.Close()
                                     xlExcel.Quit()
 
                                 Else ' cuando no corresponde al año
@@ -6981,9 +6979,13 @@ Public Class Validador2019
                                     xlExcel.Quit()
                                 End If
 
-                            Catch ex As Exception
 
+                            Catch ex As Exception
+                                MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al leer archivo")
+                                Return False
                             End Try
+
+
                         Case Else
                             MsgBox("El archivo seleccionado no corresponde a un establecimiento del servicio de salud osorno", MsgBoxStyle.Exclamation)
                     End Select
@@ -12413,7 +12415,7 @@ Public Class Validador2019
     End Sub
     Sub CONTROL_P()
         xlHoja = xlLibro.Worksheets("Contro")
-        ValidaHojaControl = xlHoja.Range("D18").Value
+        ValidaHojaControl = xlHoja.Range("D19").Value
         xlHoja = Nothing
     End Sub
     Sub CONTROL_D()
@@ -12524,73 +12526,73 @@ Public Class Validador2019
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
         '  1 
-        Select Case C(62)
-            Case Is <> B(46)
-                With Me.DataGridView1.Rows
-                    .Add("P1", " [B][D]", "VAL [01]", "[ERROR]", "Gestantes y Mujeres de 8º Mes Post-Parto en Control, celda C62 debe ser igual a Gestantes en Control con Riesgo Psicosocial, celda B46", "[" & C(62) & " - " & B(46) & "]")
-                End With
-        End Select
-        ' 2 VALIDACION LOCAL
-        If (B(53) <> 0 And C(53) < 4) Or (B(53) = 0 And C(53) <> 0) Then
-            With Me.DataGridView1.Rows
-                .Add("P1", " [C]", "VAL [02]", "[REVISAR]", "Gestantes en Riesgo Psicosocial con visita Domiciliaria, si celda B53  tiene información se debe multiplicar por el total de visitas en celda C53", "[" & B(53) & " - " & C(53) & "]")
-            End With
-        End If
+        'Select Case C(62)
+        '    Case Is <> B(46)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P1", " [B][D]", "VAL [01]", "[ERROR]", "Gestantes y Mujeres de 8º Mes Post-Parto en Control, celda C62 debe ser igual a Gestantes en Control con Riesgo Psicosocial, celda B46", "[" & C(62) & " - " & B(46) & "]")
+        '        End With
+        'End Select
+        '' 2 VALIDACION LOCAL
+        'If (B(53) <> 0 And C(53) < 4) Or (B(53) = 0 And C(53) <> 0) Then
+        '    With Me.DataGridView1.Rows
+        '        .Add("P1", " [C]", "VAL [02]", "[REVISAR]", "Gestantes en Riesgo Psicosocial con visita Domiciliaria, si celda B53  tiene información se debe multiplicar por el total de visitas en celda C53", "[" & B(53) & " - " & C(53) & "]")
+        '    End With
+        'End If
 
-        '3 *********************************************************************************************
-        Select Case B(71)  ' 
-            Case Is > C(58)
-                With Me.DataGridView1.Rows
-                    .Add("REM P1", " [E][D]", "VAL [03]", "[ERROR]", "Mujeres y Gestantes en Control con Consulta Nutricional, la celda B71 debe ser menor o igual a la celda C58", "[" & B(71) & " - " & C(58) & "]")
-                End With
-        End Select
-        '4 *********************************************************************************************
-        Select Case B(72)  ' 
-            Case Is > C(59)
-                With Me.DataGridView1.Rows
-                    .Add("P1", " [E]", "VAL [04]", "[ERROR]", "Mujeres y Gestantes en Control con Consulta Nutricional, la celda B72 debe ser menor o igual a la celda C59", "[" & B(72) & " - " & C(59) & "]")
-                End With
-        End Select
-        '5 *********************************************************************************************
-        Select Case B(70)  ' 
-            Case Is > C(61)
-                With Me.DataGridView1.Rows
-                    .Add("P1", " [E]", "VAL [05]", "[ERROR]", "Mujeres y Gestantes en Control con Consulta Nutricional, la celda B70 debe ser menor o igual a la celda C61", "[" & B(70) & " - " & C(61) & "]")
-                End With
-        End Select
+        ''3 *********************************************************************************************
+        'Select Case B(71)  ' 
+        '    Case Is > C(58)
+        '        With Me.DataGridView1.Rows
+        '            .Add("REM P1", " [E][D]", "VAL [03]", "[ERROR]", "Mujeres y Gestantes en Control con Consulta Nutricional, la celda B71 debe ser menor o igual a la celda C58", "[" & B(71) & " - " & C(58) & "]")
+        '        End With
+        'End Select
+        ''4 *********************************************************************************************
+        'Select Case B(72)  ' 
+        '    Case Is > C(59)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P1", " [E]", "VAL [04]", "[ERROR]", "Mujeres y Gestantes en Control con Consulta Nutricional, la celda B72 debe ser menor o igual a la celda C59", "[" & B(72) & " - " & C(59) & "]")
+        '        End With
+        'End Select
+        ''5 *********************************************************************************************
+        'Select Case B(70)  ' 
+        '    Case Is > C(61)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P1", " [E]", "VAL [05]", "[ERROR]", "Mujeres y Gestantes en Control con Consulta Nutricional, la celda B70 debe ser menor o igual a la celda C61", "[" & B(70) & " - " & C(61) & "]")
+        '        End With
+        'End Select
 
-        '6 *********************************************************************************************
-        Select Case B(77) ' 
-            Case Is < B(78)
-                With Me.DataGridView1.Rows
-                    .Add("P1", " [F]", "VAL [06]", "[ERROR]", "Mujeres en Control de Climaterio, celda B77 debe ser mayor o igual a la celda B78", "[" & B(77) & " - " & B(78) & "]")
-                End With
-        End Select
-        '7 *********************************************************************************************
-        Select Case B(78) ' 
-            Case Is < B(79)
-                With Me.DataGridView1.Rows
-                    .Add("P1", " [F]", "VAL [07]", "[ERROR]", "Mujeres en Control de Climaterio, celda B78 debe ser mayor o igual a la celda B79", "[" & B(78) & " - " & B(79) & "]")
-                End With
-        End Select
-        '8 *********************************************************************************************
-        Select Case B(79) ' 
-            Case Is < B(80)
-                With Me.DataGridView1.Rows
-                    .Add("P1", " [F]", "VAL [08]", "[ERROR]", "Mujeres en Control de Climaterio, celda B79 debe ser mayor o igual a la celda B80", "[" & B(79) & " - " & B(80) & "]")
-                End With
-        End Select
-        '9 *********************************************************************************************
-        Select Case CodigoEstablec
-            Case 123100 ' HBO
-            Case Else ' el resto de establecimiento
-                Select Case B(139)
-                    Case Is <> 0
-                        With Me.DataGridView1.Rows
-                            .Add("P1", " [I]", "VAL [09]", "[ERROR]", "Población en Control por Patologías de Alto Riesgo Obstétrico, celda B139 corresponde sólo a Hospital Base Osorno", "[" & B(139) & "]")
-                        End With
-                End Select
-        End Select
+        ''6 *********************************************************************************************
+        'Select Case B(77) ' 
+        '    Case Is < B(78)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P1", " [F]", "VAL [06]", "[ERROR]", "Mujeres en Control de Climaterio, celda B77 debe ser mayor o igual a la celda B78", "[" & B(77) & " - " & B(78) & "]")
+        '        End With
+        'End Select
+        ''7 *********************************************************************************************
+        'Select Case B(78) ' 
+        '    Case Is < B(79)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P1", " [F]", "VAL [07]", "[ERROR]", "Mujeres en Control de Climaterio, celda B78 debe ser mayor o igual a la celda B79", "[" & B(78) & " - " & B(79) & "]")
+        '        End With
+        'End Select
+        ''8 *********************************************************************************************
+        'Select Case B(79) ' 
+        '    Case Is < B(80)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P1", " [F]", "VAL [08]", "[ERROR]", "Mujeres en Control de Climaterio, celda B79 debe ser mayor o igual a la celda B80", "[" & B(79) & " - " & B(80) & "]")
+        '        End With
+        'End Select
+        ''9 *********************************************************************************************
+        'Select Case CodigoEstablec
+        '    Case 123100 ' HBO
+        '    Case Else ' el resto de establecimiento
+        '        Select Case B(139)
+        '            Case Is <> 0
+        '                With Me.DataGridView1.Rows
+        '                    .Add("P1", " [I]", "VAL [09]", "[ERROR]", "Población en Control por Patologías de Alto Riesgo Obstétrico, celda B139 corresponde sólo a Hospital Base Osorno", "[" & B(139) & "]")
+        '                End With
+        '        End Select
+        'End Select
 
         xlHoja = Nothing
     End Sub
@@ -12741,34 +12743,34 @@ Public Class Validador2019
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
-        ' 1 
-        Select Case (C(11) - (F(11) + G(11)))
-            Case Is <> C(39)
-                With Me.DataGridView1.Rows
-                    .Add("P2", " [A]", "VAL [01]", "[ERROR]", "Población en Control, la suma de la celda C11 menos la suma de las celdas F11 y G11 debe ser igual a la celda C39", "[" & (C(11) - (F(11) + G(11))) & " - " & C(39) & "]")
-                End With
-        End Select
-        '2
-        Select Case C(19)
-            Case Is <> (H(33) + I(33) + J(33) + K(33) + L(33) + M(33) + N(33) + O(33) + P(33) + Q(33) + R(33) + S(33) + T(33) + U(33) + V(33) + W(33) + X(33) + Y(33) + Z(33) + AA(33) + AB(33) + AC(33) + AD(33) + AE(33) + AF(33) + AG(33))
-                With Me.DataGridView1.Rows
-                    .Add("P2", " [A]", "VAL [02]", "[ERROR]", "Población en Control, celda C19 debe ser igual a la suma de las celdas H33 a AG33", "[" & C(19) & " - " & (H(33) + I(33) + J(33) + K(33) + L(33) + M(33) + N(33) + O(33) + P(33) + Q(33) + R(33) + S(33) + T(33) + U(33) + V(33) + W(33) + X(33) + Y(33) + Z(33) + AA(33) + AB(33) + AC(33) + AD(33) + AE(33) + AF(33) + AG(33)) & "]")
-                End With
-        End Select
-        '3 
-        Select Case C(18)
-            Case Is <> (H(34) + I(34) + J(34) + K(34) + L(34) + M(34) + N(34) + O(34) + P(34) + Q(34) + R(34) + S(34) + T(34) + U(34) + V(34) + W(34) + X(34) + Y(34) + Z(34) + AA(34) + AB(34) + AC(34) + AD(34) + AE(34) + AF(34) + AG(34))
-                With Me.DataGridView1.Rows
-                    .Add("P2", " [A]", "VAL [03]", "[ERROR]", "Población en Control, celda C18 debe ser igual a la suma de H34 a AG34", "[" & C(15) & " - " & (H(34) + I(34) + J(34) + K(34) + L(34) + M(34) + N(34) + O(34) + P(34) + Q(34) + R(34) + S(34) + T(34) + U(34) + V(34) + W(34) + X(34) + Y(34) + Z(34) + AA(34) + AB(34) + AC(34) + AD(34) + AE(34) + AF(34) + AG(34)) & "]")
-                End With
-        End Select
-        '4 
-        Select Case C(32)
-            Case Is <> (((H(16) + I(16) + J(16) + K(16) + L(16) + M(16) + N(16) + O(16) + P(16) + Q(16) + R(16) + S(16) + T(16) + U(16)) + (V(22) + W(22) + X(22) + Y(22) + Z(22) + AA(22) + AB(22) + AC(22) + AD(22) + AE(22) + AF(22) + AG(22))) - C(38))
-                With Me.DataGridView1.Rows
-                    .Add("P2", " [A]", "VAL [04]", "[ERROR]", "Población en Control, celda C32 debe ser igual a la suma de las celdas H16 a U16 más la suma  de las celdas V22 a AG22 menos C38", "[" & C(32) & " - " & (((H(16) + I(16) + J(16) + K(16) + L(16) + M(16) + N(16) + O(16) + P(16) + Q(16) + R(16) + S(16) + T(16) + U(16)) + (V(22) + W(22) + X(22) + Y(22) + Z(22) + AA(22) + AB(22) + AC(22) + AD(22) + AE(22) + AF(22) + AG(22))) - C(38)) & "]")
-                End With
-        End Select
+        '' 1 
+        'Select Case (C(11) - (F(11) + G(11)))
+        '    Case Is <> C(39)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P2", " [A]", "VAL [01]", "[ERROR]", "Población en Control, la suma de la celda C11 menos la suma de las celdas F11 y G11 debe ser igual a la celda C39", "[" & (C(11) - (F(11) + G(11))) & " - " & C(39) & "]")
+        '        End With
+        'End Select
+        ''2
+        'Select Case C(19)
+        '    Case Is <> (H(33) + I(33) + J(33) + K(33) + L(33) + M(33) + N(33) + O(33) + P(33) + Q(33) + R(33) + S(33) + T(33) + U(33) + V(33) + W(33) + X(33) + Y(33) + Z(33) + AA(33) + AB(33) + AC(33) + AD(33) + AE(33) + AF(33) + AG(33))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P2", " [A]", "VAL [02]", "[ERROR]", "Población en Control, celda C19 debe ser igual a la suma de las celdas H33 a AG33", "[" & C(19) & " - " & (H(33) + I(33) + J(33) + K(33) + L(33) + M(33) + N(33) + O(33) + P(33) + Q(33) + R(33) + S(33) + T(33) + U(33) + V(33) + W(33) + X(33) + Y(33) + Z(33) + AA(33) + AB(33) + AC(33) + AD(33) + AE(33) + AF(33) + AG(33)) & "]")
+        '        End With
+        'End Select
+        ''3 
+        'Select Case C(18)
+        '    Case Is <> (H(34) + I(34) + J(34) + K(34) + L(34) + M(34) + N(34) + O(34) + P(34) + Q(34) + R(34) + S(34) + T(34) + U(34) + V(34) + W(34) + X(34) + Y(34) + Z(34) + AA(34) + AB(34) + AC(34) + AD(34) + AE(34) + AF(34) + AG(34))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P2", " [A]", "VAL [03]", "[ERROR]", "Población en Control, celda C18 debe ser igual a la suma de H34 a AG34", "[" & C(15) & " - " & (H(34) + I(34) + J(34) + K(34) + L(34) + M(34) + N(34) + O(34) + P(34) + Q(34) + R(34) + S(34) + T(34) + U(34) + V(34) + W(34) + X(34) + Y(34) + Z(34) + AA(34) + AB(34) + AC(34) + AD(34) + AE(34) + AF(34) + AG(34)) & "]")
+        '        End With
+        'End Select
+        ''4 
+        'Select Case C(32)
+        '    Case Is <> (((H(16) + I(16) + J(16) + K(16) + L(16) + M(16) + N(16) + O(16) + P(16) + Q(16) + R(16) + S(16) + T(16) + U(16)) + (V(22) + W(22) + X(22) + Y(22) + Z(22) + AA(22) + AB(22) + AC(22) + AD(22) + AE(22) + AF(22) + AG(22))) - C(38))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P2", " [A]", "VAL [04]", "[ERROR]", "Población en Control, celda C32 debe ser igual a la suma de las celdas H16 a U16 más la suma  de las celdas V22 a AG22 menos C38", "[" & C(32) & " - " & (((H(16) + I(16) + J(16) + K(16) + L(16) + M(16) + N(16) + O(16) + P(16) + Q(16) + R(16) + S(16) + T(16) + U(16)) + (V(22) + W(22) + X(22) + Y(22) + Z(22) + AA(22) + AB(22) + AC(22) + AD(22) + AE(22) + AF(22) + AG(22))) - C(38)) & "]")
+        '        End With
+        'End Select
 
 
 
@@ -12912,35 +12914,35 @@ Public Class Validador2019
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
-        '1 ***********************************************************
-        Select Case C(34)
-            Case Is > (C(32) + C(33))
-                With Me.DataGridView1.Rows
-                    .Add("P3", " [A]", "VAL [01]", "[ERROR]", "Existencia de Población en Control, celda C34 debe ser menor o igual a la suma de las celdas C32 y C33", "[" & C(34) & " - " & (C(33) + C(33)) & "]")
-                End With
-        End Select
-        '2 ***********************************************************
-        Select Case C(36)
-            Case Is > C(34)
-                With Me.DataGridView1.Rows
-                    .Add("P3", " [A]", "VAL [02]", "[ERROR]", "Existencia de Población en Control, celda C36 debe ser menor o igual a celda C34", "[" & C(36) & " - " & C(34) & "]")
-                End With
-        End Select
-        '3 ***********************************************************
-        Select Case (C(15) + C(16) + C(17))
-            Case Is <> (C(53) + C(54) + C(55) + C(56))
-                With Me.DataGridView1.Rows
-                    .Add("P3", " [A][D]", "VAL [05]", "[ERROR]", "Existencia de Población en Control, suma de celdas C15 a C17 debe ser igual a la suma de Control de Población Respiratoria Crónica de las celdas C53 a C56", "[" & (C(15) + C(16) + C(17)) & " - " & (C(53) + C(54) + C(55) + C(56)) & "]")
-                End With
-        End Select
+        ''1 ***********************************************************
+        'Select Case C(34)
+        '    Case Is > (C(32) + C(33))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P3", " [A]", "VAL [01]", "[ERROR]", "Existencia de Población en Control, celda C34 debe ser menor o igual a la suma de las celdas C32 y C33", "[" & C(34) & " - " & (C(33) + C(33)) & "]")
+        '        End With
+        'End Select
+        ''2 ***********************************************************
+        'Select Case C(36)
+        '    Case Is > C(34)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P3", " [A]", "VAL [02]", "[ERROR]", "Existencia de Población en Control, celda C36 debe ser menor o igual a celda C34", "[" & C(36) & " - " & C(34) & "]")
+        '        End With
+        'End Select
+        ''3 ***********************************************************
+        'Select Case (C(15) + C(16) + C(17))
+        '    Case Is <> (C(53) + C(54) + C(55) + C(56))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P3", " [A][D]", "VAL [05]", "[ERROR]", "Existencia de Población en Control, suma de celdas C15 a C17 debe ser igual a la suma de Control de Población Respiratoria Crónica de las celdas C53 a C56", "[" & (C(15) + C(16) + C(17)) & " - " & (C(53) + C(54) + C(55) + C(56)) & "]")
+        '        End With
+        'End Select
 
-        '4 ***********************************************************
-        Select Case (C(18) + C(19))
-            Case Is <> (C(57) + C(58) + C(59))
-                With Me.DataGridView1.Rows
-                    .Add("P3", " [A][D]", "VAL [06]", "[ERROR]", "Existencia de Población en Control, suma de celdas C18 a C19 debe ser igual a la suma de Control de Población Respiratoria Crónica de las celdas C57 a C59", "[" & (C(18) + C(19)) & " - " & (C(57) + C(58) + C(59)) & "]")
-                End With
-        End Select
+        ''4 ***********************************************************
+        'Select Case (C(18) + C(19))
+        '    Case Is <> (C(57) + C(58) + C(59))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P3", " [A][D]", "VAL [06]", "[ERROR]", "Existencia de Población en Control, suma de celdas C18 a C19 debe ser igual a la suma de Control de Población Respiratoria Crónica de las celdas C57 a C59", "[" & (C(18) + C(19)) & " - " & (C(57) + C(58) + C(59)) & "]")
+        '        End With
+        'End Select
 
 
         xlHoja = Nothing
@@ -13077,90 +13079,90 @@ Public Class Validador2019
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
-        '1 **********************************************
-        Select Case C(12)
-            Case Is > (C(16) + C(17) + C(18))
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A]", "VAL [01]", "[ERROR]", "Programa Salud Cardiovascular, celda C12 debe ser menor o igual a la suma de las celdas C16 a C18", "[" & C(12) & " - " & (C(16) + C(17) + C(18)) & "]")
-                End With
-        End Select
-        ' 2 **********************************************
-        Select Case C(12)
-            Case Is < C(28)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A]", "VAL [02]", "[ERROR]", "Programa Salud Cardiovascular, celda C12 debe ser mayor o igual a C28", "[" & C(12) & " - " & C(28) & "]")
-                End With
-        End Select
-        '3 **********************************************
-        Select Case AH(28)
-            Case Is > AH(12)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A]", "VAL [03]", "[REVISAR]", "Programa Salud Cardiovascular, celda AH28  debe ser menor o igual a AH12", "[" & AH(28) & " - " & AH(12) & "]")
-                End With
-        End Select
-        '4 **********************************************
-        Select Case AI(28)
-            Case Is > AI(12)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A]", "VAL [04]", "[REVISAR]", "Programa Salud Cardiovascular, celda AI28 debe ser menor o igual a AI12", "[" & AI(28) & " - " & AI(12) & "]")
-                End With
-        End Select
-        '5 **********************************************
-        Select Case AJ(28)
-            Case Is > AJ(12)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A]", "VAL [05]", "[REVISAR]", "Programa Salud Cardiovascular, celda AJ28 debe ser menor o igual a AJ12", "[" & AJ(28) & " - " & AJ(12) & "]")
-                End With
-        End Select
-        '6 **********************************************
-        Select Case AK(28)
-            Case Is > AK(12)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A]", "VAL [06]", "[REVISAR]", "Programa Salud Cardiovascular, celda AK28 debe ser menor o igual a AK12", "[" & AK(28) & " - " & AK(12) & "]")
-                End With
-        End Select
-        '7 **********************************************
-        Select Case C(33)
-            Case Is > C(16)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A][B]", "VAL [07]", "[ERROR]", "Prog. Salud CV, celda C33 debe ser menor o igual a Metas, celda C16", "[" & C(33) & " - " & C(16) & "]")
-                End With
-        End Select
-        '8 **********************************************
-        Select Case C(38)
-            Case Is > C(18)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A][B]", "VAL [08]", "[ERROR]", "Prog. Salud CV, celda C38 debe ser menor o igual a Metas, celda C15", "[" & C(38) & " - " & C(18) & "]")
-                End With
-        End Select
-        '9 **********************************************
-        Select Case C(35)
-            Case Is > C(17)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A][B]", "VAL [09]", "[ERROR]", "Prog. Salud CV, celda C35 debe ser menor o igual a Metas, celda C17", "[" & C(35) & " - " & C(17) & "]")
-                End With
-        End Select
-        '10 **********************************************
-        Select Case C(37)
-            Case Is > C(17)
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A][B]", "VAL [10]", "[ERROR]", "Prog. Salud CV, celda C37 debe ser menor o igual a Metas, celda C17", "[" & C(37) & " - " & C(17) & "]")
-                End With
-        End Select
-        '11 **********************************************
-        Select Case C(39)
-            Case Is > (C(20) + C(21))
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A][B]", "VAL [11]", "[ERROR]", "Metas de Compensación, celda C39 debe ser menor o igual a Prog. Salud Cardiovascular, suma de celdas C20 y C21", "[" & C(39) & " - " & (C(20) + C(21)) & "]")
-                End With
-        End Select
-        '12 **********************************************
-        Select Case C(40)
-            Case Is > (C(20) + C(21))
-                With Me.DataGridView1.Rows
-                    .Add("P4", " [A][B]", "VAL [12]", "[ERROR]", "Metas de Compensación, celda C40 debe ser menor o igual a Prog. Salud Cardiovascular, suma de celdas C20 y C21", "[" & C(40) & " - " & (C(20) + C(21)) & "]")
-                End With
-        End Select
+        ''1 **********************************************
+        'Select Case C(12)
+        '    Case Is > (C(16) + C(17) + C(18))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A]", "VAL [01]", "[ERROR]", "Programa Salud Cardiovascular, celda C12 debe ser menor o igual a la suma de las celdas C16 a C18", "[" & C(12) & " - " & (C(16) + C(17) + C(18)) & "]")
+        '        End With
+        'End Select
+        '' 2 **********************************************
+        'Select Case C(12)
+        '    Case Is < C(28)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A]", "VAL [02]", "[ERROR]", "Programa Salud Cardiovascular, celda C12 debe ser mayor o igual a C28", "[" & C(12) & " - " & C(28) & "]")
+        '        End With
+        'End Select
+        ''3 **********************************************
+        'Select Case AH(28)
+        '    Case Is > AH(12)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A]", "VAL [03]", "[REVISAR]", "Programa Salud Cardiovascular, celda AH28  debe ser menor o igual a AH12", "[" & AH(28) & " - " & AH(12) & "]")
+        '        End With
+        'End Select
+        ''4 **********************************************
+        'Select Case AI(28)
+        '    Case Is > AI(12)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A]", "VAL [04]", "[REVISAR]", "Programa Salud Cardiovascular, celda AI28 debe ser menor o igual a AI12", "[" & AI(28) & " - " & AI(12) & "]")
+        '        End With
+        'End Select
+        ''5 **********************************************
+        'Select Case AJ(28)
+        '    Case Is > AJ(12)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A]", "VAL [05]", "[REVISAR]", "Programa Salud Cardiovascular, celda AJ28 debe ser menor o igual a AJ12", "[" & AJ(28) & " - " & AJ(12) & "]")
+        '        End With
+        'End Select
+        ''6 **********************************************
+        'Select Case AK(28)
+        '    Case Is > AK(12)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A]", "VAL [06]", "[REVISAR]", "Programa Salud Cardiovascular, celda AK28 debe ser menor o igual a AK12", "[" & AK(28) & " - " & AK(12) & "]")
+        '        End With
+        'End Select
+        ''7 **********************************************
+        'Select Case C(33)
+        '    Case Is > C(16)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A][B]", "VAL [07]", "[ERROR]", "Prog. Salud CV, celda C33 debe ser menor o igual a Metas, celda C16", "[" & C(33) & " - " & C(16) & "]")
+        '        End With
+        'End Select
+        ''8 **********************************************
+        'Select Case C(38)
+        '    Case Is > C(18)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A][B]", "VAL [08]", "[ERROR]", "Prog. Salud CV, celda C38 debe ser menor o igual a Metas, celda C15", "[" & C(38) & " - " & C(18) & "]")
+        '        End With
+        'End Select
+        ''9 **********************************************
+        'Select Case C(35)
+        '    Case Is > C(17)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A][B]", "VAL [09]", "[ERROR]", "Prog. Salud CV, celda C35 debe ser menor o igual a Metas, celda C17", "[" & C(35) & " - " & C(17) & "]")
+        '        End With
+        'End Select
+        ''10 **********************************************
+        'Select Case C(37)
+        '    Case Is > C(17)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A][B]", "VAL [10]", "[ERROR]", "Prog. Salud CV, celda C37 debe ser menor o igual a Metas, celda C17", "[" & C(37) & " - " & C(17) & "]")
+        '        End With
+        'End Select
+        ''11 **********************************************
+        'Select Case C(39)
+        '    Case Is > (C(20) + C(21))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A][B]", "VAL [11]", "[ERROR]", "Metas de Compensación, celda C39 debe ser menor o igual a Prog. Salud Cardiovascular, suma de celdas C20 y C21", "[" & C(39) & " - " & (C(20) + C(21)) & "]")
+        '        End With
+        'End Select
+        ''12 **********************************************
+        'Select Case C(40)
+        '    Case Is > (C(20) + C(21))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P4", " [A][B]", "VAL [12]", "[ERROR]", "Metas de Compensación, celda C40 debe ser menor o igual a Prog. Salud Cardiovascular, suma de celdas C20 y C21", "[" & C(40) & " - " & (C(20) + C(21)) & "]")
+        '        End With
+        'End Select
 
 
         xlHoja = Nothing
@@ -13270,36 +13272,36 @@ Public Class Validador2019
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
-        '1 ***************************************
-        Select Case D(21)
-            Case Is <> C(38)
-                With Me.DataGridView1.Rows
-                    .Add("P5", " [A][B]", "VAL [01]", "[ERROR]", "Población en Control por Condición de Funcionalidad, celda D21 debe ser igual a Población Bajo Control por Estado Nutricional, celda C38", "[" & D(21) & " - " & C(38) & "]")
-                End With
-        End Select
-        Select Case E(21)
-            Case Is <> D(38)
-                With Me.DataGridView1.Rows
-                    .Add("P5", " [A][B]", "VAL [01]", "[ERROR]", "Población en Control por Condición de Funcionalidad, celda E21 debe ser igual a Población Bajo Control por Estado Nutricional, celda D38", "[" & E(21) & " - " & D(38) & "]")
-                End With
-        End Select
-        Select Case F(21)
-            Case Is <> E(38)
-                With Me.DataGridView1.Rows
-                    .Add("P5", " [A][B]", "VAL [01]", "[ERROR]", "Población en Control por Condición de Funcionalidad, celda F21 debe ser igual a Población Bajo Control por Estado Nutricional, celda E38", "[" & F(21) & " - " & E(38) & "]")
-                End With
-        End Select
-        '2 VALIDACION LOCAL **************************************************************************************************************************
-        Select Case CodigoEstablec
-            Case 123307, 123300, 123301, 123303, 123306, 123310, 123304 ' Más Adultos Mayores Autovalentes
-            Case Else ' resto de estable
-                Select Case D(29)
-                    Case Is <> 0
-                        With Me.DataGridView1.Rows
-                            .Add("P5", " [A.1]", "VAL [02]", "[ERROR]", "Existencia de Población en Control en Programa MAS, celda D29 solo debe ingresar establecimientos pertenecientes al Programa Más Adultos Autovalentes", D(29))
-                        End With
-                End Select
-        End Select
+        ''1 ***************************************
+        'Select Case D(21)
+        '    Case Is <> C(38)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P5", " [A][B]", "VAL [01]", "[ERROR]", "Población en Control por Condición de Funcionalidad, celda D21 debe ser igual a Población Bajo Control por Estado Nutricional, celda C38", "[" & D(21) & " - " & C(38) & "]")
+        '        End With
+        'End Select
+        'Select Case E(21)
+        '    Case Is <> D(38)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P5", " [A][B]", "VAL [01]", "[ERROR]", "Población en Control por Condición de Funcionalidad, celda E21 debe ser igual a Población Bajo Control por Estado Nutricional, celda D38", "[" & E(21) & " - " & D(38) & "]")
+        '        End With
+        'End Select
+        'Select Case F(21)
+        '    Case Is <> E(38)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P5", " [A][B]", "VAL [01]", "[ERROR]", "Población en Control por Condición de Funcionalidad, celda F21 debe ser igual a Población Bajo Control por Estado Nutricional, celda E38", "[" & F(21) & " - " & E(38) & "]")
+        '        End With
+        'End Select
+        ''2 VALIDACION LOCAL **************************************************************************************************************************
+        'Select Case CodigoEstablec
+        '    Case 123307, 123300, 123301, 123303, 123306, 123310, 123304 ' Más Adultos Mayores Autovalentes
+        '    Case Else ' resto de estable
+        '        Select Case D(29)
+        '            Case Is <> 0
+        '                With Me.DataGridView1.Rows
+        '                    .Add("P5", " [A.1]", "VAL [02]", "[ERROR]", "Existencia de Población en Control en Programa MAS, celda D29 solo debe ingresar establecimientos pertenecientes al Programa Más Adultos Autovalentes", D(29))
+        '                End With
+        '        End Select
+        'End Select
 
 
         xlHoja = Nothing
@@ -13353,114 +13355,9 @@ Public Class Validador2019
             AR(ii) = xlHoja.Range("AR" & ii & "").Value
             AS1(ii) = xlHoja.Range("AS" & ii & "").Value
             AT(ii) = xlHoja.Range("AT" & ii & "").Value
+            AU(ii) = xlHoja.Range("AU" & ii & "").Value
         Next
-        For ii = 15 To 51
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-            L(ii) = xlHoja.Range("L" & ii & "").Value
-            M(ii) = xlHoja.Range("M" & ii & "").Value
-            N(ii) = xlHoja.Range("N" & ii & "").Value
-            O(ii) = xlHoja.Range("O" & ii & "").Value
-            P(ii) = xlHoja.Range("P" & ii & "").Value
-            Q(ii) = xlHoja.Range("Q" & ii & "").Value
-            R(ii) = xlHoja.Range("R" & ii & "").Value
-            S(ii) = xlHoja.Range("S" & ii & "").Value
-            T(ii) = xlHoja.Range("T" & ii & "").Value
-            U(ii) = xlHoja.Range("U" & ii & "").Value
-            V(ii) = xlHoja.Range("V" & ii & "").Value
-            W(ii) = xlHoja.Range("W" & ii & "").Value
-            X(ii) = xlHoja.Range("X" & ii & "").Value
-            Y(ii) = xlHoja.Range("Y" & ii & "").Value
-            Z(ii) = xlHoja.Range("Z" & ii & "").Value
-            AA(ii) = xlHoja.Range("AA" & ii & "").Value
-            AB(ii) = xlHoja.Range("AB" & ii & "").Value
-            AC(ii) = xlHoja.Range("AC" & ii & "").Value
-            AD(ii) = xlHoja.Range("AD" & ii & "").Value
-            AE(ii) = xlHoja.Range("AE" & ii & "").Value
-            AF(ii) = xlHoja.Range("AF" & ii & "").Value
-            AG(ii) = xlHoja.Range("AG" & ii & "").Value
-            AH(ii) = xlHoja.Range("AH" & ii & "").Value
-            AI(ii) = xlHoja.Range("AI" & ii & "").Value
-            AJ(ii) = xlHoja.Range("AJ" & ii & "").Value
-            AK(ii) = xlHoja.Range("AK" & ii & "").Value
-            AL(ii) = xlHoja.Range("AL" & ii & "").Value
-            AM(ii) = xlHoja.Range("AM" & ii & "").Value
-            AN(ii) = xlHoja.Range("AN" & ii & "").Value
-            AO(ii) = xlHoja.Range("AO" & ii & "").Value
-            AP(ii) = xlHoja.Range("AP" & ii & "").Value
-            AQ(ii) = xlHoja.Range("AQ" & ii & "").Value
-            AR(ii) = xlHoja.Range("AR" & ii & "").Value
-            AS1(ii) = xlHoja.Range("AS" & ii & "").Value
-            AT(ii) = xlHoja.Range("AT" & ii & "").Value
-        Next
-        ' SECCION A.2: PROGRAMA DE REHABILITACIÓN EN ATENCION PRIMARIA (PERSONAS CON TRANSTORNOS PSIQUIÁTRICO).
-        For ii = 56 To 57
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-            L(ii) = xlHoja.Range("L" & ii & "").Value
-            M(ii) = xlHoja.Range("M" & ii & "").Value
-            N(ii) = xlHoja.Range("N" & ii & "").Value
-            O(ii) = xlHoja.Range("O" & ii & "").Value
-            P(ii) = xlHoja.Range("P" & ii & "").Value
-            Q(ii) = xlHoja.Range("Q" & ii & "").Value
-            R(ii) = xlHoja.Range("R" & ii & "").Value
-            S(ii) = xlHoja.Range("S" & ii & "").Value
-            T(ii) = xlHoja.Range("T" & ii & "").Value
-            U(ii) = xlHoja.Range("U" & ii & "").Value
-            V(ii) = xlHoja.Range("V" & ii & "").Value
-            W(ii) = xlHoja.Range("W" & ii & "").Value
-            X(ii) = xlHoja.Range("X" & ii & "").Value
-            Y(ii) = xlHoja.Range("Y" & ii & "").Value
-            Z(ii) = xlHoja.Range("Z" & ii & "").Value
-            AA(ii) = xlHoja.Range("AA" & ii & "").Value
-            AB(ii) = xlHoja.Range("AB" & ii & "").Value
-            AC(ii) = xlHoja.Range("AC" & ii & "").Value
-            AD(ii) = xlHoja.Range("AD" & ii & "").Value
-            AE(ii) = xlHoja.Range("AE" & ii & "").Value
-            AF(ii) = xlHoja.Range("AF" & ii & "").Value
-            AG(ii) = xlHoja.Range("AG" & ii & "").Value
-            AH(ii) = xlHoja.Range("AH" & ii & "").Value
-            AI(ii) = xlHoja.Range("AI" & ii & "").Value
-            AJ(ii) = xlHoja.Range("AJ" & ii & "").Value
-            AK(ii) = xlHoja.Range("AK" & ii & "").Value
-            AL(ii) = xlHoja.Range("AL" & ii & "").Value
-            AM(ii) = xlHoja.Range("AM" & ii & "").Value
-        Next
-        ' SECCION A.3: PROGRAMA DE ACOMPAÑAMIENTO PSICOSOCIAL EN LA ATENCION PRIMARIA
-        For ii = 62 To 62
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-            L(ii) = xlHoja.Range("L" & ii & "").Value
-            M(ii) = xlHoja.Range("M" & ii & "").Value
-            N(ii) = xlHoja.Range("N" & ii & "").Value
-            O(ii) = xlHoja.Range("O" & ii & "").Value
-            P(ii) = xlHoja.Range("P" & ii & "").Value
-            Q(ii) = xlHoja.Range("Q" & ii & "").Value
-        Next
-        ' B. ATENCIÓN DE ESPECIALIDADES
-        ' SECCION B.1: POBLACIÓN EN CONTROL EN ESPECIALIDAD AL CORTE"														
-        For ii = 67 To 67
+        For ii = 15 To 49
             C(ii) = xlHoja.Range("C" & ii & "").Value
             D(ii) = xlHoja.Range("D" & ii & "").Value
             E(ii) = xlHoja.Range("E" & ii & "").Value
@@ -13507,7 +13404,114 @@ Public Class Validador2019
             AT(ii) = xlHoja.Range("AT" & ii & "").Value
             AU(ii) = xlHoja.Range("AU" & ii & "").Value
         Next
-        For ii = 69 To 105
+        ' SECCION A.2: PROGRAMA DE REHABILITACIÓN EN ATENCION PRIMARIA (PERSONAS CON TRANSTORNOS PSIQUIÁTRICO).
+        For ii = 54 To 55
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+            R(ii) = xlHoja.Range("R" & ii & "").Value
+            S(ii) = xlHoja.Range("S" & ii & "").Value
+            T(ii) = xlHoja.Range("T" & ii & "").Value
+            U(ii) = xlHoja.Range("U" & ii & "").Value
+            V(ii) = xlHoja.Range("V" & ii & "").Value
+            W(ii) = xlHoja.Range("W" & ii & "").Value
+            X(ii) = xlHoja.Range("X" & ii & "").Value
+            Y(ii) = xlHoja.Range("Y" & ii & "").Value
+            Z(ii) = xlHoja.Range("Z" & ii & "").Value
+            AA(ii) = xlHoja.Range("AA" & ii & "").Value
+            AB(ii) = xlHoja.Range("AB" & ii & "").Value
+            AC(ii) = xlHoja.Range("AC" & ii & "").Value
+            AD(ii) = xlHoja.Range("AD" & ii & "").Value
+            AE(ii) = xlHoja.Range("AE" & ii & "").Value
+            AF(ii) = xlHoja.Range("AF" & ii & "").Value
+            AG(ii) = xlHoja.Range("AG" & ii & "").Value
+            AH(ii) = xlHoja.Range("AH" & ii & "").Value
+            AI(ii) = xlHoja.Range("AI" & ii & "").Value
+            AJ(ii) = xlHoja.Range("AJ" & ii & "").Value
+            AK(ii) = xlHoja.Range("AK" & ii & "").Value
+            AL(ii) = xlHoja.Range("AL" & ii & "").Value
+            AM(ii) = xlHoja.Range("AM" & ii & "").Value
+        Next
+        ' SECCION A.3: PROGRAMA DE ACOMPAÑAMIENTO PSICOSOCIAL EN LA ATENCION PRIMARIA
+        For ii = 60 To 60
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        Next
+        ' B. ATENCIÓN DE ESPECIALIDADES
+        ' SECCION B.1: POBLACIÓN EN CONTROL EN ESPECIALIDAD AL CORTE"														
+        For ii = 65 To 65
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+            R(ii) = xlHoja.Range("R" & ii & "").Value
+            S(ii) = xlHoja.Range("S" & ii & "").Value
+            T(ii) = xlHoja.Range("T" & ii & "").Value
+            U(ii) = xlHoja.Range("U" & ii & "").Value
+            V(ii) = xlHoja.Range("V" & ii & "").Value
+            W(ii) = xlHoja.Range("W" & ii & "").Value
+            X(ii) = xlHoja.Range("X" & ii & "").Value
+            Y(ii) = xlHoja.Range("Y" & ii & "").Value
+            Z(ii) = xlHoja.Range("Z" & ii & "").Value
+            AA(ii) = xlHoja.Range("AA" & ii & "").Value
+            AB(ii) = xlHoja.Range("AB" & ii & "").Value
+            AC(ii) = xlHoja.Range("AC" & ii & "").Value
+            AD(ii) = xlHoja.Range("AD" & ii & "").Value
+            AE(ii) = xlHoja.Range("AE" & ii & "").Value
+            AF(ii) = xlHoja.Range("AF" & ii & "").Value
+            AG(ii) = xlHoja.Range("AG" & ii & "").Value
+            AH(ii) = xlHoja.Range("AH" & ii & "").Value
+            AI(ii) = xlHoja.Range("AI" & ii & "").Value
+            AJ(ii) = xlHoja.Range("AJ" & ii & "").Value
+            AK(ii) = xlHoja.Range("AK" & ii & "").Value
+            AL(ii) = xlHoja.Range("AL" & ii & "").Value
+            AM(ii) = xlHoja.Range("AM" & ii & "").Value
+            AN(ii) = xlHoja.Range("AN" & ii & "").Value
+            AO(ii) = xlHoja.Range("AO" & ii & "").Value
+            AP(ii) = xlHoja.Range("AP" & ii & "").Value
+            AQ(ii) = xlHoja.Range("AQ" & ii & "").Value
+            AR(ii) = xlHoja.Range("AR" & ii & "").Value
+            AS1(ii) = xlHoja.Range("AS" & ii & "").Value
+            AT(ii) = xlHoja.Range("AT" & ii & "").Value
+            AU(ii) = xlHoja.Range("AU" & ii & "").Value
+        Next
+        For ii = 67 To 101
             C(ii) = xlHoja.Range("C" & ii & "").Value
             D(ii) = xlHoja.Range("D" & ii & "").Value
             E(ii) = xlHoja.Range("E" & ii & "").Value
@@ -13555,7 +13559,7 @@ Public Class Validador2019
             AU(ii) = xlHoja.Range("AU" & ii & "").Value
         Next
         ' SECCION B.2: PROGRAMA DE REHABILITACIÓN EN ESPECIALIDAD (PERSONAS CON TRANSTORNOS PSIQUIÁTRICO)
-        For ii = 110 To 111
+        For ii = 106 To 107
             C(ii) = xlHoja.Range("C" & ii & "").Value
             D(ii) = xlHoja.Range("D" & ii & "").Value
             E(ii) = xlHoja.Range("E" & ii & "").Value
@@ -13598,49 +13602,49 @@ Public Class Validador2019
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
-        '1********************************************************************************************************************************************************
-        Select Case C(13)
-            Case Is < (C(15) + C(16) + C(17))
-                With Me.DataGridView1.Rows
-                    .Add("P6", " [A.1]", "VAL [01]", "[ERROR]", "Población en control al corte, celdas C13 debe ser mayor o igual a la suma de las celdas C15 a C17", "[" & C(13) & " - " & (C(15) + C(16) + C(17)) & "]")
-                End With
-        End Select
-        '2********************************************************************************************************************************************************
-        Select Case C(22)
-            Case Is < C(13)
-                With Me.DataGridView1.Rows
-                    .Add("P6", " [A.1]", "VAL [02]", "[ERROR]", "Población en control al corte, personas con diagnostico de trastorno mentales celda C22 deben estar incluidas en el numero de personas en control celda C13", "[" & C(22) & " - " & C(13) & "]")
-                End With
-        End Select
-        '3********************************************************************************************************************************************************
-        Select Case C(22)
-            Case Is > (C(23) + C(24) + C(25) + C(26) + C(27) + C(28) + C(29) + C(30) + C(31) + C(32) + C(33) + C(34) + C(35) + C(36) + C(37) + C(38) + C(39) + C(40) + C(41) + C(42) + C(43) + C(44) + C(45) + C(46) + C(47) + C(48) + C(49) + C(50) + C(51))
-                With Me.DataGridView1.Rows
-                    .Add("P6", " [A.1]", "VAL [03]", "[ERROR]", "Población en control al corte, celda C22 debe ser menor o igual a la suma de las celdas C23:C51", "[" & C(22) & " - " & (C(23) + C(24) + C(25) + C(26) + C(27) + C(28) + C(29) + C(30) + C(31) + C(32) + C(33) + C(34) + C(35) + C(36) + C(37) + C(38) + C(39) + C(40) + C(41) + C(42) + C(43) + C(44) + C(45) + C(46) + C(47) + C(48) + C(49) + C(50) + C(51)) & "]")
-                End With
-        End Select
+        ''1********************************************************************************************************************************************************
+        'Select Case C(13)
+        '    Case Is < (C(15) + C(16) + C(17))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P6", " [A.1]", "VAL [01]", "[ERROR]", "Población en control al corte, celdas C13 debe ser mayor o igual a la suma de las celdas C15 a C17", "[" & C(13) & " - " & (C(15) + C(16) + C(17)) & "]")
+        '        End With
+        'End Select
+        ''2********************************************************************************************************************************************************
+        'Select Case C(22)
+        '    Case Is < C(13)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P6", " [A.1]", "VAL [02]", "[ERROR]", "Población en control al corte, personas con diagnostico de trastorno mentales celda C22 deben estar incluidas en el numero de personas en control celda C13", "[" & C(22) & " - " & C(13) & "]")
+        '        End With
+        'End Select
+        ''3********************************************************************************************************************************************************
+        'Select Case C(22)
+        '    Case Is > (C(23) + C(24) + C(25) + C(26) + C(27) + C(28) + C(29) + C(30) + C(31) + C(32) + C(33) + C(34) + C(35) + C(36) + C(37) + C(38) + C(39) + C(40) + C(41) + C(42) + C(43) + C(44) + C(45) + C(46) + C(47) + C(48) + C(49) + C(50) + C(51))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P6", " [A.1]", "VAL [03]", "[ERROR]", "Población en control al corte, celda C22 debe ser menor o igual a la suma de las celdas C23:C51", "[" & C(22) & " - " & (C(23) + C(24) + C(25) + C(26) + C(27) + C(28) + C(29) + C(30) + C(31) + C(32) + C(33) + C(34) + C(35) + C(36) + C(37) + C(38) + C(39) + C(40) + C(41) + C(42) + C(43) + C(44) + C(45) + C(46) + C(47) + C(48) + C(49) + C(50) + C(51)) & "]")
+        '        End With
+        'End Select
 
-        '4********************************************************************************************************************************************************
-        Select Case C(67)
-            Case Is < (C(69) + C(70) + C(71))
-                With Me.DataGridView1.Rows
-                    .Add("P6", " [B.1]", "VAL [04]", "[ERROR]", "Población en control al corte, celdas C67 debe ser mayor o igual a la suma de las celdas C69 a C71", "[" & C(67) & " - " & (C(69) + C(70) + C(71)) & "]")
-                End With
-        End Select
-        '5********************************************************************************************************************************************************
-        Select Case C(76)
-            Case Is < C(67)
-                With Me.DataGridView1.Rows
-                    .Add("P6", " [B.1]", "VAL [05]", "[ERROR]", "Población en control al corte, personas con diagnostico de trastorno mentales celda C76 deben estar incluidas en el numero de personas en control celda C67", "[" & C(76) & " - " & C(67) & "]")
-                End With
-        End Select
-        '6********************************************************************************************************************************************************
-        Select Case C(76)
-            Case Is > (C(77) + C(78) + C(79) + C(80) + C(81) + C(82) + C(83) + C(84) + C(85) + C(86) + C(87) + C(88) + C(89) + C(90) + C(91) + C(92) + C(93) + C(94) + C(95) + C(96) + C(97) + C(98) + C(99) + C(100) + C(101) + C(102) + C(103) + C(104) + C(105))
-                With Me.DataGridView1.Rows
-                    .Add("P6", " [B.1]", "VAL [06]", "[ERROR]", " Población en control al corte, celda C76 debe ser menor o igual a la suma de las celdas C77:C105", "[" & C(76) & " - " & (C(77) + C(78) + C(79) + C(80) + C(81) + C(82) + C(83) + C(84) + C(85) + C(86) + C(87) + C(88) + C(89) + C(90) + C(91) + C(92) + C(93) + C(94) + C(95) + C(96) + C(97) + C(98) + C(99) + C(100) + C(101) + C(102) + C(103) + C(104) + C(105)) & "]")
-                End With
-        End Select
+        ''4********************************************************************************************************************************************************
+        'Select Case C(67)
+        '    Case Is < (C(69) + C(70) + C(71))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P6", " [B.1]", "VAL [04]", "[ERROR]", "Población en control al corte, celdas C67 debe ser mayor o igual a la suma de las celdas C69 a C71", "[" & C(67) & " - " & (C(69) + C(70) + C(71)) & "]")
+        '        End With
+        'End Select
+        ''5********************************************************************************************************************************************************
+        'Select Case C(76)
+        '    Case Is < C(67)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P6", " [B.1]", "VAL [05]", "[ERROR]", "Población en control al corte, personas con diagnostico de trastorno mentales celda C76 deben estar incluidas en el numero de personas en control celda C67", "[" & C(76) & " - " & C(67) & "]")
+        '        End With
+        'End Select
+        ''6********************************************************************************************************************************************************
+        'Select Case C(76)
+        '    Case Is > (C(77) + C(78) + C(79) + C(80) + C(81) + C(82) + C(83) + C(84) + C(85) + C(86) + C(87) + C(88) + C(89) + C(90) + C(91) + C(92) + C(93) + C(94) + C(95) + C(96) + C(97) + C(98) + C(99) + C(100) + C(101) + C(102) + C(103) + C(104) + C(105))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P6", " [B.1]", "VAL [06]", "[ERROR]", " Población en control al corte, celda C76 debe ser menor o igual a la suma de las celdas C77:C105", "[" & C(76) & " - " & (C(77) + C(78) + C(79) + C(80) + C(81) + C(82) + C(83) + C(84) + C(85) + C(86) + C(87) + C(88) + C(89) + C(90) + C(91) + C(92) + C(93) + C(94) + C(95) + C(96) + C(97) + C(98) + C(99) + C(100) + C(101) + C(102) + C(103) + C(104) + C(105)) & "]")
+        '        End With
+        'End Select
 
         xlHoja = Nothing
     End Sub
@@ -13672,7 +13676,7 @@ Public Class Validador2019
             J(ii) = xlHoja.Range("J" & ii & "").Value
         Next
         ' SECCIÓN B. INTERVENCIÓN EN FAMILIAS SECTOR URBANO Y RURAL
-        For ii = 25 To 31
+        For ii = 25 To 34
             D(ii) = xlHoja.Range("D" & ii & "").Value
             E(ii) = xlHoja.Range("E" & ii & "").Value
             F(ii) = xlHoja.Range("F" & ii & "").Value
@@ -13688,33 +13692,33 @@ Public Class Validador2019
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
         '1**************************************************************************************************************************************
-        Select Case B(10)
-            Case Is < B(11)
-                With Me.DataGridView1.Rows
-                    .Add("P7", " [A]", "VAL [01]", "[ERROR]", "Clasificación de las familias, celdas B10 debe ser mayor B11", "[" & B(10) & " - " & B(11) & "]")
-                End With
-        End Select
-        '2**************************************************************************************************************************************
-        Select Case B(11)
-            Case Is < (B(12) + B(13) + B(14))
-                With Me.DataGridView1.Rows
-                    .Add("P7", " [A]", "VAL [02]", "[ERROR]", "Clasificación de las familias Sector Urbano, celda B12 debe ser mayor a la celdas B12:B14", "[" & B(11) & " - " & (B(12) + B(13) + B(14)) & "]")
-                End With
-        End Select
-        '3**************************************************************************************************************************************
-        Select Case B(18)
-            Case Is < B(19)
-                With Me.DataGridView1.Rows
-                    .Add("P7", " [A.1]", "VAL [03]", "[ERROR]", "Clasificación de las familias Sector Rural, celda B18 debe ser mayor a la celda B19", "[" & B(18) & " - " & B(19) & "]")
-                End With
-        End Select
-        '4**************************************************************************************************************************************
-        Select Case B(19)
-            Case Is < (B(20) + B(21) + B(22))
-                With Me.DataGridView1.Rows
-                    .Add("P7", " [A.1]", "VAL [04]", "[ERROR]", "Clasificación de las familias Sector Urbano, celda B19 debe ser mayor a la celdas B20:B22", "[" & B(19) & " - " & (B(20) + B(21) + B(22)) & "]")
-                End With
-        End Select
+        'Select Case B(10)
+        '    Case Is < B(11)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P7", " [A]", "VAL [01]", "[ERROR]", "Clasificación de las familias, celdas B10 debe ser mayor B11", "[" & B(10) & " - " & B(11) & "]")
+        '        End With
+        'End Select
+        ''2**************************************************************************************************************************************
+        'Select Case B(11)
+        '    Case Is < (B(12) + B(13) + B(14))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P7", " [A]", "VAL [02]", "[ERROR]", "Clasificación de las familias Sector Urbano, celda B12 debe ser mayor a la celdas B12:B14", "[" & B(11) & " - " & (B(12) + B(13) + B(14)) & "]")
+        '        End With
+        'End Select
+        ''3**************************************************************************************************************************************
+        'Select Case B(18)
+        '    Case Is < B(19)
+        '        With Me.DataGridView1.Rows
+        '            .Add("P7", " [A.1]", "VAL [03]", "[ERROR]", "Clasificación de las familias Sector Rural, celda B18 debe ser mayor a la celda B19", "[" & B(18) & " - " & B(19) & "]")
+        '        End With
+        'End Select
+        ''4**************************************************************************************************************************************
+        'Select Case B(19)
+        '    Case Is < (B(20) + B(21) + B(22))
+        '        With Me.DataGridView1.Rows
+        '            .Add("P7", " [A.1]", "VAL [04]", "[ERROR]", "Clasificación de las familias Sector Urbano, celda B19 debe ser mayor a la celdas B20:B22", "[" & B(19) & " - " & (B(20) + B(21) + B(22)) & "]")
+        '        End With
+        'End Select
 
 
 
@@ -14131,32 +14135,32 @@ Public Class Validador2019
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
         '1*****************************************************************************************************************************************************************
-        Select Case CodigoEstablec
-            Case 123100 'HBO
-            Case Else ' el resto de establecimiento
-                Select Case (B(12) + B(13) + B(14) + B(15))
-                    Case Is <> 0
-                        With Me.DataGridView1.Rows
-                            .Add("P11", " [A]", "VAL [01]", "[ERROR]", "Población en Control del Programa ITS, celdas D12 a D15 debe registrar sólo el HBO", "[" & (B(12) + B(13) + B(14) + B(15)) & "]")
-                        End With
-                End Select
-        End Select
-        '2*****************************************************************************************************************************************************************
-        Select Case CodigoEstablec
-            Case 123100
-            Case Else ' el resto de establecimiento
-                Select Case C(20)
-                    Case Is <> 0
-                        With Me.DataGridView1.Rows
-                            .Add("P11", " [B]", "VAL [02]", "[ERROR]", "Población en Control por Comercio Sexual, celda B20 debe registrar sólo el HBO", "[" & C(20) & "]")
-                        End With
-                End Select
-        End Select
+        'Select Case CodigoEstablec
+        '    Case 123100 'HBO
+        '    Case Else ' el resto de establecimiento
+        '        Select Case (B(12) + B(13) + B(14) + B(15))
+        '            Case Is <> 0
+        '                With Me.DataGridView1.Rows
+        '                    .Add("P11", " [A]", "VAL [01]", "[ERROR]", "Población en Control del Programa ITS, celdas D12 a D15 debe registrar sólo el HBO", "[" & (B(12) + B(13) + B(14) + B(15)) & "]")
+        '                End With
+        '        End Select
+        'End Select
+        ''2*****************************************************************************************************************************************************************
+        'Select Case CodigoEstablec
+        '    Case 123100
+        '    Case Else ' el resto de establecimiento
+        '        Select Case C(20)
+        '            Case Is <> 0
+        '                With Me.DataGridView1.Rows
+        '                    .Add("P11", " [B]", "VAL [02]", "[ERROR]", "Población en Control por Comercio Sexual, celda B20 debe registrar sólo el HBO", "[" & C(20) & "]")
+        '                End With
+        '        End Select
+        'End Select
 
         xlHoja = Nothing
     End Sub
     Sub P12()
-        Dim ii, B(87), C(87), D(87), E(87), F(87), G(87), H(87), I(87), J(87), K(87), L(87), M(87), N(87), O(87), P(87), Q(87), R(87), S(87), T(87), U(87), V(87), W(87), X(87), Y(87), Z(87), AA(87), AB(87), AC(87), AD(87), AE(87), AF(87), AG(87), AH(87), AI(87), AJ(87), AK(87), AL(87), AM(87), AN(87), AO(87), AP(87), AQ(87), AR(87), AS1(87) As Integer
+        Dim ii, B(131), C(131), D(131), E(131), F(131), G(131), H(131), I(131), J(131), K(131), L(131) As Integer
         xlHoja = xlLibro.Worksheets("P12")
         ' SECCION A: PROGRAMA DE CANCER DE CUELLO UTERINO: POBLACIÓN CON PAP VIGENTE
         For ii = 10 To 23
@@ -14189,6 +14193,7 @@ Public Class Validador2019
             I(ii) = xlHoja.Range("I" & ii & "").Value
             J(ii) = xlHoja.Range("J" & ii & "").Value
             K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
         Next
         ' SECCION C: PROGRAMA DE CANCER DE MAMA: MUJERES CON MAMOGRAFÍA VIGENTE EN LOS ULTIMOS 3 AÑOS. 
         For ii = 65 To 74
@@ -14198,59 +14203,89 @@ Public Class Validador2019
         For ii = 78 To 87
             B(ii) = xlHoja.Range("B" & ii & "").Value
         Next
+        'SECCION E: PROGRAMA DE CANCER DE CUELLO UTERINO: POBLACIÓN CON VPH VIGENTE
+        For ii = 91 To 98
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+        Next
+        'SECCIÓN F: PROGRAMA DE CANCER DE CUELLO UTERINO: VPH  REALIZADOS E INFORMADOS SEGÚN RESULTADOS Y GRUPOS DE EDAD (Examen realizados en la red pública)"										
+        For ii = 103 To 114
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+        Next
+        'SECCIÓN F.1: PROGRAMA DE CANCER DE CUELLO UTERINO: VPH REALIZADOS E INFORMADOS SEGÚN RESULTADOS Y GRUPOS DE EDAD (Examen realizados en extrasistema)"										
+        For ii = 120 To 131
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+        Next
+
         MsgBox("REMP12 OK")
         '*************************************************************************************************************************************************************************************
         '********************************************************************** VALIDACIONES *************************************************************************************************
         '*************************************************************************************************************************************************************************************
-        '1*****************************************************************************************************************************************************************
-        Select Case (B(11) + B(12) + B(13) + B(14) + B(15) + B(16) + B(17) + B(18))
-            Case Is = 0
-                With Me.DataGridView1.Rows
-                    .Add("P12", " [A]", "VAL [01]", "[ERROR]", "Población Femenina con PAP vigente, celdas B11:B18 (grupo-etario 25 a 64 años) deben registran todos los establecimientos de la Red", "[" & (B(11) + B(12) + B(13) + B(14) + B(15) + B(16) + B(17) + B(18)) & "]")
-                End With
-        End Select
-        '2 *****************************************************************************************************************************************************************
-        Select Case CodigoEstablec
-            Case 123100
-            Case Else ' el resto de establecimiento
-                Select Case B(42)
-                    Case Is <> 0
-                        With Me.DataGridView1.Rows
-                            .Add("P12", " [B]", "VAL [02]", "[ERROR]", "PAP Realizados e Informados según Resultados, celda B42 debe registrar sólo HBO", "[" & B(42) & "]")
-                        End With
-                End Select
-        End Select
-        '3*****************************************************************************************************************************************************************
-        Select Case B(61)
-            Case Is = 0
-                With Me.DataGridView1.Rows
-                    .Add("P12", " [B.2]", "VAL [03]", "[ERROR]", "Programa de cáncer de cuello uterino, celda B61 registran todos los establecimientos de la red (se excluye el HBO)", "[" & B(61) & "]")
-                End With
-        End Select
-        '4 *****************************************************************************************************************************************************************
-        Select Case CodigoEstablec
-            Case 123100
-                Select Case B(74)
-                    Case Is <> 0
-                        With Me.DataGridView1.Rows
-                            .Add("P12", " [C]", "VAL [04]", "[ERROR]", "Programa de cáncer de mama: Mujeres con mamografía vigente en los últimos 3 años, celda B74 deben registrar Todos los Establecimientos de la Red excluyendo al HBO.", "[" & B(74) & "]")
-                        End With
-                End Select
-            Case Else 'resto de estables
+        ''1*****************************************************************************************************************************************************************
+        'Select Case (B(11) + B(12) + B(13) + B(14) + B(15) + B(16) + B(17) + B(18))
+        '    Case Is = 0
+        '        With Me.DataGridView1.Rows
+        '            .Add("P12", " [A]", "VAL [01]", "[ERROR]", "Población Femenina con PAP vigente, celdas B11:B18 (grupo-etario 25 a 64 años) deben registran todos los establecimientos de la Red", "[" & (B(11) + B(12) + B(13) + B(14) + B(15) + B(16) + B(17) + B(18)) & "]")
+        '        End With
+        'End Select
+        ''2 *****************************************************************************************************************************************************************
+        'Select Case CodigoEstablec
+        '    Case 123100
+        '    Case Else ' el resto de establecimiento
+        '        Select Case B(42)
+        '            Case Is <> 0
+        '                With Me.DataGridView1.Rows
+        '                    .Add("P12", " [B]", "VAL [02]", "[ERROR]", "PAP Realizados e Informados según Resultados, celda B42 debe registrar sólo HBO", "[" & B(42) & "]")
+        '                End With
+        '        End Select
+        'End Select
+        ''3*****************************************************************************************************************************************************************
+        'Select Case B(61)
+        '    Case Is = 0
+        '        With Me.DataGridView1.Rows
+        '            .Add("P12", " [B.2]", "VAL [03]", "[ERROR]", "Programa de cáncer de cuello uterino, celda B61 registran todos los establecimientos de la red (se excluye el HBO)", "[" & B(61) & "]")
+        '        End With
+        'End Select
+        ''4 *****************************************************************************************************************************************************************
+        'Select Case CodigoEstablec
+        '    Case 123100
+        '        Select Case B(74)
+        '            Case Is <> 0
+        '                With Me.DataGridView1.Rows
+        '                    .Add("P12", " [C]", "VAL [04]", "[ERROR]", "Programa de cáncer de mama: Mujeres con mamografía vigente en los últimos 3 años, celda B74 deben registrar Todos los Establecimientos de la Red excluyendo al HBO.", "[" & B(74) & "]")
+        '                End With
+        '        End Select
+        '    Case Else 'resto de estables
 
-        End Select
-        '5 *****************************************************************************************************************************************************************
-        Select Case CodigoEstablec
-            Case 123100
-                Select Case B(87)
-                    Case Is <> 0
-                        With Me.DataGridView1.Rows
-                            .Add("P12", " [D]", "VAL [05]", "[ERROR]", "Programa de cáncer de mama: numero de mujeres con examen físico de mama (vigente), celda B87 deben registrar Todos los Establecimientos de la Red excluyendo al HBO; DSSO; HPU y HRN", "[" & B(69) & "]")
-                        End With
-                End Select
-            Case Else 'resto de estables
+        'End Select
+        ''5 *****************************************************************************************************************************************************************
+        'Select Case CodigoEstablec
+        '    Case 123100
+        '        Select Case B(87)
+        '            Case Is <> 0
+        '                With Me.DataGridView1.Rows
+        '                    .Add("P12", " [D]", "VAL [05]", "[ERROR]", "Programa de cáncer de mama: numero de mujeres con examen físico de mama (vigente), celda B87 deben registrar Todos los Establecimientos de la Red excluyendo al HBO; DSSO; HPU y HRN", "[" & B(69) & "]")
+        '                End With
+        '        End Select
+        '    Case Else 'resto de estables
 
-        End Select
+        'End Select
+
+
+
+
+
+
         ' **** 
         'Select Case C(23)
         '    Case Is <> 0
@@ -14258,6 +14293,116 @@ Public Class Validador2019
         '            .Add("P12", " [A]", "VAL [06]", "[ERROR]", "HOMBRES con PAP Vigente (Menor o igual a 3 años), No puede existir registros ", "[" & C(23) & "]")
         '        End With
         'End Select
+
+        xlHoja = Nothing
+    End Sub
+    Sub P13()
+        Dim ii, B(20), C(20), D(20), E(20), F(20), G(20), H(20), I(20), J(20), K(20), L(20), M(20), N(20), O(20), P(20), Q(20) As Integer
+        xlHoja = xlLibro.Worksheets("P13")
+        ' SECCIÓN A. POBLACIÓN SENAME POTENCIAL DE ATENCION EN APS AL CORTE						
+        For ii = 12 To 12
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+        Next
+        ' SECCIÓN B. NIÑOS, NIÑAS, ADOLESCENTES Y JÓVENES VINCULADOS A POBLACIÓN SENAME EN CONTROL DE SALUD EN APS AL CORTE
+        For ii = 17 To 20
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        Next
+        'SECCIÓN C. VARIABLES DE SEGUIMIENTO A POBLACIÓN SENAME EN CONTROL DE SALUD EN APS AL CORTE
+        For ii = 25 To 30
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        Next
+        ' SECCIÓN D. POBLACIÓN SENAME POTENCIAL DE ATENCION EN ESPECIALIDAD AL CORTE						
+        For ii = 35 To 35
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+        Next
+        ' SECCIÓN E. NIÑOS, NIÑAS, ADOLESCENTES Y JÓVENES VINCULADOS A POBLACIÓN SENAME EN CONTROL DE SALUD EN ESPECIALIDAD AL CORTE
+        For ii = 40 To 43
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        Next
+        ' SECCIÓN F. VARIABLES DE SEGUIMIENTO A POBLACIÓN SENAME EN CONTROL DE SALUD EN ESPECIALIDAD AL CORTE
+        For ii = 48 To 53
+            B(ii) = xlHoja.Range("B" & ii & "").Value
+            C(ii) = xlHoja.Range("C" & ii & "").Value
+            D(ii) = xlHoja.Range("D" & ii & "").Value
+            E(ii) = xlHoja.Range("E" & ii & "").Value
+            F(ii) = xlHoja.Range("F" & ii & "").Value
+            G(ii) = xlHoja.Range("G" & ii & "").Value
+            H(ii) = xlHoja.Range("H" & ii & "").Value
+            I(ii) = xlHoja.Range("I" & ii & "").Value
+            J(ii) = xlHoja.Range("J" & ii & "").Value
+            K(ii) = xlHoja.Range("K" & ii & "").Value
+            L(ii) = xlHoja.Range("L" & ii & "").Value
+            M(ii) = xlHoja.Range("M" & ii & "").Value
+            N(ii) = xlHoja.Range("N" & ii & "").Value
+            O(ii) = xlHoja.Range("O" & ii & "").Value
+            P(ii) = xlHoja.Range("P" & ii & "").Value
+            Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        Next
+
+
 
         xlHoja = Nothing
     End Sub
