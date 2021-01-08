@@ -535,9 +535,9 @@ Partial Class Validador2019
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(90, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(1016, 255)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 14)
+        Me.Label1.Size = New System.Drawing.Size(83, 14)
         Me.Label1.TabIndex = 32
-        Me.Label1.Text = "1.2 Junio 2020"
+        Me.Label1.Text = "1.3 Enero 2021"
         '
         'Label2
         '
