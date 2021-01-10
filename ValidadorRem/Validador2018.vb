@@ -11083,8 +11083,8 @@ Public Class Validador2019
     End Sub
     Sub COMPLETITUD_SERIEP()
         Select Case CodigoEstablec
-            Case 123000 'EJEMPLO
-                ProgressBar1.Maximum = 10
+            Case 123100 'Hospital Base Osorno
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11115,17 +11115,34 @@ Public Class Validador2019
                 Me.P12()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
-
-            Case 123100 'Hospital Base Osorno
-                ProgressBar1.Maximum = 5
+            Case 123102 'Hospital Rio Negro
+                ProgressBar1.Maximum = 11
                 Me.P1()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P2()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P3()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P5()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P7()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P11()
@@ -11134,15 +11151,12 @@ Public Class Validador2019
                 Me.P12()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-
-            Case 123102 'Hospital Rio Negro
-                ProgressBar1.Maximum = 1
-                Me.P8()
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123103 'Hospital Pto. Octay
-                ProgressBar1.Maximum = 8
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11161,15 +11175,24 @@ Public Class Validador2019
                 Me.P6()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P7()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123104 'Hospital Mision San Juan
-                ProgressBar1.Maximum = 8
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11188,15 +11211,24 @@ Public Class Validador2019
                 Me.P6()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P7()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123105 'Hospital Socorro de Quilacahuin
-                ProgressBar1.Maximum = 8
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11215,15 +11247,24 @@ Public Class Validador2019
                 Me.P6()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P7()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123300 'Cesfam Pedro Jauregui
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11245,18 +11286,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P10()
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123301 'Cesfam Marcelo Lopetegui
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11278,15 +11322,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123302 'Cesfam Ovejeria
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11308,15 +11358,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123303 'Cesfam Rahue Alto
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11338,18 +11394,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P10()
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123304 'Cesfam Entre Lagos
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11371,18 +11430,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P10()
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123305 ' Cesfam San Pablo
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11404,18 +11466,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P10()
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123306 ' Cesfam Pampa Alegre
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11437,15 +11502,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123307 'Cesfam Purranque
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11467,18 +11538,21 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P10()
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123309 'Cesfam Pablo Araya
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
@@ -11500,780 +11574,1352 @@ Public Class Validador2019
                 Me.P7()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P8()
+                Me.P9()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
-                Me.P10()
+                Me.P11()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
                 ProgressBar1.Increment(1)
                 LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123310 'Cesfam Quinto Centenario
-                ProgressBar1.Maximum = 10
+
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
-                Me.P10()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123311 'Cesfam Bahia Mansa
-                ProgressBar1.Maximum = 10
+
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
-                Me.P10()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123312 'Cesfam Puaucho
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
-                Me.P10()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123402 'PSR Cuinco
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123404 'PSR Pichi Damas
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123406 'PSR Puyehue
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123407 'PSR Desague Rupanco
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123408 'PSR Ñadi Pichi Damas
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123410 'PSR Tres Esteros
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123411 'PSR Corte Alto
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123412 'PSR Crucero
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123413 'PSR Coligual
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123414 'PSR Hueyusca
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123415 'PSR Concordia
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123416 'PSR Colonia Ponce
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123417 'PSR La Naranja
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123419 'PSR San Pedro de Purranque
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123420 'PSR Collihuinco
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123422 'PSR Rupanco
-                ProgressBar1.Maximum = 10
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
-                Me.P10()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123423 'PSR Cascada
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123424 'PSR Piedras Negras
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123425 'PSR Cancura
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123426 'PSR Pellinada
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123427 'PSR La Calo
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123428 'PSR Coihueco
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123430 'PSR Purrehuin
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123431 'PSR Aleucapi
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123432 'PSR La Poza
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123434 'PSR Huilma
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123435 'PSR Pucopio
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123436 'PSR Chanco
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123437 'PSR Currimahuida
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123700 'Cecosf Murrinumo
-                ProgressBar1.Maximum = 8
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123701 'Cecosf Manuel Rodriguez
-                ProgressBar1.Maximum = 8
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123705 'Cecosf El Encanto
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 123709 'Cecosf Riachuelo
-                ProgressBar1.Maximum = 9
+                ProgressBar1.Maximum = 11
                 Me.P1()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P2()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P3()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P4()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P5()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P7()
                 ProgressBar1.Increment(1)
-                Me.P8()
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P12()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
             Case 200209 'Cosam Rahue
-                ProgressBar1.Maximum = 1
+                ProgressBar1.Maximum = 11
+                Me.P1()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P2()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P3()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P4()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P5()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
                 Me.P6()
                 ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P7()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P9()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P11()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P12()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
+                Me.P13()
+                ProgressBar1.Increment(1)
+                LBLprogreso.Text = FormatPercent(CSng(ProgressBar1.Value) / (ProgressBar1.Maximum), 0)
 
         End Select
     End Sub
@@ -14285,110 +14931,110 @@ Public Class Validador2019
         xlHoja = Nothing
     End Sub
     Sub P13()
-        Dim ii, B(20), C(20), D(20), E(20), F(20), G(20), H(20), I(20), J(20), K(20), L(20), M(20), N(20), O(20), P(20), Q(20) As Integer
-        xlHoja = xlLibro.Worksheets("P13")
-        ' SECCIÓN A. POBLACIÓN SENAME POTENCIAL DE ATENCION EN APS AL CORTE						
-        For ii = 12 To 12
-            B(ii) = xlHoja.Range("B" & ii & "").Value
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-        Next
-        ' SECCIÓN B. NIÑOS, NIÑAS, ADOLESCENTES Y JÓVENES VINCULADOS A POBLACIÓN SENAME EN CONTROL DE SALUD EN APS AL CORTE
-        For ii = 17 To 20
-            B(ii) = xlHoja.Range("B" & ii & "").Value
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-            L(ii) = xlHoja.Range("L" & ii & "").Value
-            M(ii) = xlHoja.Range("M" & ii & "").Value
-            N(ii) = xlHoja.Range("N" & ii & "").Value
-            O(ii) = xlHoja.Range("O" & ii & "").Value
-            P(ii) = xlHoja.Range("P" & ii & "").Value
-            Q(ii) = xlHoja.Range("Q" & ii & "").Value
-        Next
-        'SECCIÓN C. VARIABLES DE SEGUIMIENTO A POBLACIÓN SENAME EN CONTROL DE SALUD EN APS AL CORTE
-        For ii = 25 To 30
-            B(ii) = xlHoja.Range("B" & ii & "").Value
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-            L(ii) = xlHoja.Range("L" & ii & "").Value
-            M(ii) = xlHoja.Range("M" & ii & "").Value
-            N(ii) = xlHoja.Range("N" & ii & "").Value
-            O(ii) = xlHoja.Range("O" & ii & "").Value
-            P(ii) = xlHoja.Range("P" & ii & "").Value
-            Q(ii) = xlHoja.Range("Q" & ii & "").Value
-        Next
-        ' SECCIÓN D. POBLACIÓN SENAME POTENCIAL DE ATENCION EN ESPECIALIDAD AL CORTE						
-        For ii = 35 To 35
-            B(ii) = xlHoja.Range("B" & ii & "").Value
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-        Next
-        ' SECCIÓN E. NIÑOS, NIÑAS, ADOLESCENTES Y JÓVENES VINCULADOS A POBLACIÓN SENAME EN CONTROL DE SALUD EN ESPECIALIDAD AL CORTE
-        For ii = 40 To 43
-            B(ii) = xlHoja.Range("B" & ii & "").Value
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-            L(ii) = xlHoja.Range("L" & ii & "").Value
-            M(ii) = xlHoja.Range("M" & ii & "").Value
-            N(ii) = xlHoja.Range("N" & ii & "").Value
-            O(ii) = xlHoja.Range("O" & ii & "").Value
-            P(ii) = xlHoja.Range("P" & ii & "").Value
-            Q(ii) = xlHoja.Range("Q" & ii & "").Value
-        Next
-        ' SECCIÓN F. VARIABLES DE SEGUIMIENTO A POBLACIÓN SENAME EN CONTROL DE SALUD EN ESPECIALIDAD AL CORTE
-        For ii = 48 To 53
-            B(ii) = xlHoja.Range("B" & ii & "").Value
-            C(ii) = xlHoja.Range("C" & ii & "").Value
-            D(ii) = xlHoja.Range("D" & ii & "").Value
-            E(ii) = xlHoja.Range("E" & ii & "").Value
-            F(ii) = xlHoja.Range("F" & ii & "").Value
-            G(ii) = xlHoja.Range("G" & ii & "").Value
-            H(ii) = xlHoja.Range("H" & ii & "").Value
-            I(ii) = xlHoja.Range("I" & ii & "").Value
-            J(ii) = xlHoja.Range("J" & ii & "").Value
-            K(ii) = xlHoja.Range("K" & ii & "").Value
-            L(ii) = xlHoja.Range("L" & ii & "").Value
-            M(ii) = xlHoja.Range("M" & ii & "").Value
-            N(ii) = xlHoja.Range("N" & ii & "").Value
-            O(ii) = xlHoja.Range("O" & ii & "").Value
-            P(ii) = xlHoja.Range("P" & ii & "").Value
-            Q(ii) = xlHoja.Range("Q" & ii & "").Value
-        Next
+        'Dim ii, B(20), C(20), D(20), E(20), F(20), G(20), H(20), I(20), J(20), K(20), L(20), M(20), N(20), O(20), P(20), Q(20) As Integer
+        'xlHoja = xlLibro.Worksheets("P13")
+        '' SECCIÓN A. POBLACIÓN SENAME POTENCIAL DE ATENCION EN APS AL CORTE						
+        'For ii = 12 To 12
+        '    B(ii) = xlHoja.Range("B" & ii & "").Value
+        '    C(ii) = xlHoja.Range("C" & ii & "").Value
+        '    D(ii) = xlHoja.Range("D" & ii & "").Value
+        '    E(ii) = xlHoja.Range("E" & ii & "").Value
+        '    F(ii) = xlHoja.Range("F" & ii & "").Value
+        '    G(ii) = xlHoja.Range("G" & ii & "").Value
+        '    H(ii) = xlHoja.Range("H" & ii & "").Value
+        '    I(ii) = xlHoja.Range("I" & ii & "").Value
+        '    J(ii) = xlHoja.Range("J" & ii & "").Value
+        '    K(ii) = xlHoja.Range("K" & ii & "").Value
+        'Next
+        '' SECCIÓN B. NIÑOS, NIÑAS, ADOLESCENTES Y JÓVENES VINCULADOS A POBLACIÓN SENAME EN CONTROL DE SALUD EN APS AL CORTE
+        'For ii = 17 To 20
+        '    B(ii) = xlHoja.Range("B" & ii & "").Value
+        '    C(ii) = xlHoja.Range("C" & ii & "").Value
+        '    D(ii) = xlHoja.Range("D" & ii & "").Value
+        '    E(ii) = xlHoja.Range("E" & ii & "").Value
+        '    F(ii) = xlHoja.Range("F" & ii & "").Value
+        '    G(ii) = xlHoja.Range("G" & ii & "").Value
+        '    H(ii) = xlHoja.Range("H" & ii & "").Value
+        '    I(ii) = xlHoja.Range("I" & ii & "").Value
+        '    J(ii) = xlHoja.Range("J" & ii & "").Value
+        '    K(ii) = xlHoja.Range("K" & ii & "").Value
+        '    L(ii) = xlHoja.Range("L" & ii & "").Value
+        '    M(ii) = xlHoja.Range("M" & ii & "").Value
+        '    N(ii) = xlHoja.Range("N" & ii & "").Value
+        '    O(ii) = xlHoja.Range("O" & ii & "").Value
+        '    P(ii) = xlHoja.Range("P" & ii & "").Value
+        '    Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        'Next
+        ''SECCIÓN C. VARIABLES DE SEGUIMIENTO A POBLACIÓN SENAME EN CONTROL DE SALUD EN APS AL CORTE
+        'For ii = 25 To 30
+        '    B(ii) = xlHoja.Range("B" & ii & "").Value
+        '    C(ii) = xlHoja.Range("C" & ii & "").Value
+        '    D(ii) = xlHoja.Range("D" & ii & "").Value
+        '    E(ii) = xlHoja.Range("E" & ii & "").Value
+        '    F(ii) = xlHoja.Range("F" & ii & "").Value
+        '    G(ii) = xlHoja.Range("G" & ii & "").Value
+        '    H(ii) = xlHoja.Range("H" & ii & "").Value
+        '    I(ii) = xlHoja.Range("I" & ii & "").Value
+        '    J(ii) = xlHoja.Range("J" & ii & "").Value
+        '    K(ii) = xlHoja.Range("K" & ii & "").Value
+        '    L(ii) = xlHoja.Range("L" & ii & "").Value
+        '    M(ii) = xlHoja.Range("M" & ii & "").Value
+        '    N(ii) = xlHoja.Range("N" & ii & "").Value
+        '    O(ii) = xlHoja.Range("O" & ii & "").Value
+        '    P(ii) = xlHoja.Range("P" & ii & "").Value
+        '    Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        'Next
+        '' SECCIÓN D. POBLACIÓN SENAME POTENCIAL DE ATENCION EN ESPECIALIDAD AL CORTE						
+        'For ii = 35 To 35
+        '    B(ii) = xlHoja.Range("B" & ii & "").Value
+        '    C(ii) = xlHoja.Range("C" & ii & "").Value
+        '    D(ii) = xlHoja.Range("D" & ii & "").Value
+        '    E(ii) = xlHoja.Range("E" & ii & "").Value
+        '    F(ii) = xlHoja.Range("F" & ii & "").Value
+        '    G(ii) = xlHoja.Range("G" & ii & "").Value
+        '    H(ii) = xlHoja.Range("H" & ii & "").Value
+        '    I(ii) = xlHoja.Range("I" & ii & "").Value
+        '    J(ii) = xlHoja.Range("J" & ii & "").Value
+        '    K(ii) = xlHoja.Range("K" & ii & "").Value
+        'Next
+        '' SECCIÓN E. NIÑOS, NIÑAS, ADOLESCENTES Y JÓVENES VINCULADOS A POBLACIÓN SENAME EN CONTROL DE SALUD EN ESPECIALIDAD AL CORTE
+        'For ii = 40 To 43
+        '    B(ii) = xlHoja.Range("B" & ii & "").Value
+        '    C(ii) = xlHoja.Range("C" & ii & "").Value
+        '    D(ii) = xlHoja.Range("D" & ii & "").Value
+        '    E(ii) = xlHoja.Range("E" & ii & "").Value
+        '    F(ii) = xlHoja.Range("F" & ii & "").Value
+        '    G(ii) = xlHoja.Range("G" & ii & "").Value
+        '    H(ii) = xlHoja.Range("H" & ii & "").Value
+        '    I(ii) = xlHoja.Range("I" & ii & "").Value
+        '    J(ii) = xlHoja.Range("J" & ii & "").Value
+        '    K(ii) = xlHoja.Range("K" & ii & "").Value
+        '    L(ii) = xlHoja.Range("L" & ii & "").Value
+        '    M(ii) = xlHoja.Range("M" & ii & "").Value
+        '    N(ii) = xlHoja.Range("N" & ii & "").Value
+        '    O(ii) = xlHoja.Range("O" & ii & "").Value
+        '    P(ii) = xlHoja.Range("P" & ii & "").Value
+        '    Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        'Next
+        '' SECCIÓN F. VARIABLES DE SEGUIMIENTO A POBLACIÓN SENAME EN CONTROL DE SALUD EN ESPECIALIDAD AL CORTE
+        'For ii = 48 To 53
+        '    B(ii) = xlHoja.Range("B" & ii & "").Value
+        '    C(ii) = xlHoja.Range("C" & ii & "").Value
+        '    D(ii) = xlHoja.Range("D" & ii & "").Value
+        '    E(ii) = xlHoja.Range("E" & ii & "").Value
+        '    F(ii) = xlHoja.Range("F" & ii & "").Value
+        '    G(ii) = xlHoja.Range("G" & ii & "").Value
+        '    H(ii) = xlHoja.Range("H" & ii & "").Value
+        '    I(ii) = xlHoja.Range("I" & ii & "").Value
+        '    J(ii) = xlHoja.Range("J" & ii & "").Value
+        '    K(ii) = xlHoja.Range("K" & ii & "").Value
+        '    L(ii) = xlHoja.Range("L" & ii & "").Value
+        '    M(ii) = xlHoja.Range("M" & ii & "").Value
+        '    N(ii) = xlHoja.Range("N" & ii & "").Value
+        '    O(ii) = xlHoja.Range("O" & ii & "").Value
+        '    P(ii) = xlHoja.Range("P" & ii & "").Value
+        '    Q(ii) = xlHoja.Range("Q" & ii & "").Value
+        'Next
 
 
 
