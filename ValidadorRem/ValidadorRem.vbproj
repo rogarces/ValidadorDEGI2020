@@ -28,15 +28,15 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://estadisticas.ssosorno.cl/estadisticas/validador/Instalador/</InstallUrl>
-    <UpdateUrl>http://estadisticas.ssosorno.cl/estadisticas/validador/Instalador/</UpdateUrl>
     <TargetCulture>es-CL</TargetCulture>
     <ProductName>Validador Rem 2020</ProductName>
     <PublisherName>DEGI</PublisherName>
     <SuiteName>Validador DEGI</SuiteName>
+    <MinimumRequiredVersion>1.1.0.10</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>12</ApplicationRevision>
-    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -92,7 +92,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetZone>LocalIntranet</TargetZone>
+    <TargetZone>Custom</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>

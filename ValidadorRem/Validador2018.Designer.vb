@@ -572,7 +572,7 @@ Partial Class Validador2019
         Me.MaximizeBox = False
         Me.Name = "Validador2019"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Validador 2020 Serie A 1.2 (Actualizado)"
+        Me.Text = "Validador 2020 Series A y P (Actualizado)"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
